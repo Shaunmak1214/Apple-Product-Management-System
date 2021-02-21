@@ -9,6 +9,6 @@ MYSQL* initConnection() {
 	conn = mysql_init(0);
 	conn = mysql_real_connect(conn, "remotemysql.com", "mMIOP5Me5n", "0aEgsAQYEI", "mMIOP5Me5n", 3306, NULL, 0);
 
-	return conn;
+	return conn; 
 
 }
