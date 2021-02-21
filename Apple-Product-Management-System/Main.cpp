@@ -1,5 +1,4 @@
-// MySqlTest.cpp : Defines the entry point for the console application.
-//
+#include "db.h"
 #include <mysql.h>
 #include <iostream>
 
@@ -8,17 +7,17 @@ int qstate;
 
 int main()
 {
+
 	MYSQL* conn;
 	MYSQL_ROW row;
 	MYSQL_RES* res;
-	conn = mysql_init(0);
+	conn = initConnection();
 
-	conn = mysql_real_connect(conn, "remotemysql.com", "mMIOP5Me5n", "0aEgsAQYEI", "mMIOP5Me5n", 3306, NULL, 0);
-
-	if (conn) {
+	if (conn) 
+	{
 		puts("Successful connection to database!");
 
-		string query = "SELECT * FROM customer";
+		string query = "SELECT * FROM host";
 		const char* q = query.c_str();
 		qstate = mysql_query(conn, q);
 		if (!qstate)
@@ -34,9 +33,9 @@ int main()
 			cout << "Query failed: " << mysql_error(conn) << endl;
 		}
 	}
-	else {
+	else 
+	{
 		puts("Connection to database has failed!");
 	}
 
-	return 0;
 }

@@ -1,6 +1,9 @@
 ﻿  Main.cpp
+  dbconn.cpp
+D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-System\Apple-Product-Management-System\dbconn.cpp(8,13): warning C4101: 'res': unreferenced local variable
+D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-System\Apple-Product-Management-System\dbconn.cpp(7,12): warning C4101: 'row': unreferenced local variable
   Generating code
-  0 of 80 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  2 of 81 functions ( 2.5%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
