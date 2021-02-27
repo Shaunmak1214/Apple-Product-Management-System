@@ -8,6 +8,7 @@
 
 void printList();
 void insert(string name, string category, string price, string colors);
+void update(string id, string name, string category, string price, string colors);
 
 using namespace std;
 int qstate;
@@ -93,9 +94,6 @@ void insert(string name, string category, string price, string colors) {
 	MYSQL_RES* res;
 	int qState;
 	conn = initConnection();
-	char buffer[1024];
-
-	//string insertQ = sprintf(buffer, "INSERT INTO products ('product_name', 'product_category', 'product_price', 'product_colors') VALUES ( %s, %s, %s, %s )", name, category, price, colors);
 
 	if (conn) {
 
@@ -128,6 +126,50 @@ void insert(string name, string category, string price, string colors) {
 
 }
 
+void update(string id, string name, string category, string price, string colors) {
+
+	MYSQL* conn;
+	MYSQL_ROW row;
+	MYSQL_RES* res;
+	int qState;
+	conn = initConnection();
+
+	if (conn) {
+
+		string updateQ = "UPDATE products SET `product_name` = ";
+		updateQ += "'" + name + "' ";
+		updateQ += ",";
+		updateQ += " `product_category` = ";
+		updateQ += "'" + category + "' ";
+		updateQ += ",";
+		updateQ += " `product_price` = ";
+		updateQ += "'" + price + "' ";
+		updateQ += ",";
+		updateQ += " `product_colors` = ";
+		updateQ += "'" + colors + "' ";
+		updateQ += "WHERE `product_id` = '" + id;
+		updateQ += "';";
+
+		cout << updateQ << endl;
+
+		const char* q = updateQ.c_str();
+		qState = mysql_query(conn, q);
+
+		if (!qState) {
+
+			cout << "Update Successfully" << endl;
+
+		}
+		else {
+
+			cout << "Update Failed" << endl;
+
+		}
+
+	}
+
+}
+
 int main()
 {
 
@@ -136,6 +178,8 @@ int main()
 	printList();
 	list.printList(head);
 
-	insert("Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");
+	/*insert("Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");*/
+
+	/*update("1", "Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");*/
 
 }

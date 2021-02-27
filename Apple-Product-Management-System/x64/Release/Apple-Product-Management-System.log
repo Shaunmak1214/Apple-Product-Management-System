@@ -1,13 +1,14 @@
 ﻿  Main.cpp
 D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(4,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
 D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp : message : see previous definition of '_CRT_SECURE_NO_WARNINGS'
-D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(26,13): warning C4101: 'columnNameRes': unreferenced local variable
-D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(93,13): warning C4101: 'res': unreferenced local variable
-D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(92,12): warning C4101: 'row': unreferenced local variable
-D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(96,7): warning C4101: 'buffer': unreferenced local variable
+D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(27,13): warning C4101: 'columnNameRes': unreferenced local variable
+D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(94,13): warning C4101: 'res': unreferenced local variable
+D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(93,12): warning C4101: 'row': unreferenced local variable
+D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(133,13): warning C4101: 'res': unreferenced local variable
+D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(132,12): warning C4101: 'row': unreferenced local variable
   Generating code
-  0 of 106 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  2 of 116 functions ( 1.7%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    8 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Apple-Product-Management-System.vcxproj -> D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-System\x64\Release\Apple-Product-Management-System.exe
