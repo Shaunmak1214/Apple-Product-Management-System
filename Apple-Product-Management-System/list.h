@@ -12,6 +12,7 @@ struct Node {
 };
 
 Node* head;
+Node* head1;
 
 class linkedList {
 
@@ -47,9 +48,9 @@ public:
 		int counter = 1;
 
 		cout << endl;
-		cout << "=============" << endl;
-		cout << " Linked List" << endl;
-		cout << "=============" << endl;
+		cout << "==========================" << endl;
+		cout << "       Linked List" << endl;
+		cout << "==========================" << endl;
 
 		while (node != NULL)
 		{
