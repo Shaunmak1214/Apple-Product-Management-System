@@ -7,6 +7,7 @@
 #include <string>
 
 void printList();
+void insert(string name, string category, string price, string colors);
 
 using namespace std;
 int qstate;
@@ -85,6 +86,48 @@ void printList() {
 
 }
 
+void insert(string name, string category, string price, string colors) {
+
+	MYSQL* conn;
+	MYSQL_ROW row;
+	MYSQL_RES* res;
+	int qState;
+	conn = initConnection();
+	char buffer[1024];
+
+	//string insertQ = sprintf(buffer, "INSERT INTO products ('product_name', 'product_category', 'product_price', 'product_colors') VALUES ( %s, %s, %s, %s )", name, category, price, colors);
+
+	if (conn) {
+
+		string insertQ = "INSERT INTO products (`product_name`, `product_category`, `product_price`, `product_colors`) VALUES ( ' ";
+		insertQ += name;
+		insertQ += "', '";
+		insertQ += category;
+		insertQ += "', '";
+		insertQ += price;
+		insertQ += "', '";
+		insertQ += colors;
+		insertQ += "' );";
+		cout << insertQ << endl;
+
+		const char* q = insertQ.c_str();
+		qState = mysql_query(conn, q);
+
+		if (!qState) {
+
+			cout << "Insert Successfully" << endl;
+
+		}
+		else {
+
+			cout << "Insert Failed" << endl;
+
+		}
+
+	}
+
+}
+
 int main()
 {
 
@@ -92,5 +135,7 @@ int main()
 
 	printList();
 	list.printList(head);
+
+	insert("Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");
 
 }
