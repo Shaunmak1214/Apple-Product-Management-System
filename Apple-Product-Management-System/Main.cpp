@@ -1,6 +1,7 @@
 #include "db.h"
 #include "list.h"
 #include <mysql.h>
+#include "Sort-Insertion.h"
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
@@ -182,5 +183,7 @@ int main()
 	/*insert("Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");*/
 
 	/*update("1", "Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");*/
+
+	InsertSort();
 
 }
