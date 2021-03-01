@@ -29,5 +29,11 @@
     <ClInclude Include="list.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Sort-Insertion.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Total-Product.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
