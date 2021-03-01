@@ -1,6 +1,6 @@
 #include "db.h"
 #include "list.h"
-#include "search.h"
+#include "searchName.h"
 #include "Sort-Insertion.h"
 #include <mysql.h>
 #define _CRT_SECURE_NO_WARNINGS
@@ -91,6 +91,7 @@ void storeAllList() {
 
 }
 
+//Store product ID into linked list
 void storeIdList()
 {
 	linkedList idList;
@@ -132,6 +133,7 @@ void storeIdList()
 	}
 }
 
+//Store product name into linked list
 void storeNameList()
 {
 	linkedList nameList;
@@ -269,6 +271,8 @@ int main()
 	idList.printList(idhead);
 	storeNameList();
 	nameList.printList(namehead);
+
+	
 	
 
 	/*insert("Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");*/
@@ -277,5 +281,8 @@ int main()
 
 	//InsertSort();
 	//bubbleSort();
+
+	searchName(); //Done
+	//searchId();
 
 }

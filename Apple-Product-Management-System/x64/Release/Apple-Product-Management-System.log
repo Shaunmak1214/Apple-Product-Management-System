@@ -1,4 +1,6 @@
 ﻿  Main.cpp
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\searchName.h(24,13): warning C4101: 'nameList': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\searchName.h(25,13): warning C4101: 'smallNameList': unreferenced local variable
 C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Total-Product.h(36,28): warning C4244: '=': conversion from 'my_ulonglong' to 'int', possible loss of data
 C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Total-Product.h(20,13): warning C4101: 'columnNameRes': unreferenced local variable
 C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Total-Product.h(17,12): warning C4101: 'row': unreferenced local variable
@@ -7,15 +9,15 @@ C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Pr
 C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(6,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
 C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp : message : see previous definition of '_CRT_SECURE_NO_WARNINGS'
 C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(31,13): warning C4101: 'columnNameRes': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(103,13): warning C4101: 'columnNameRes': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(144,13): warning C4101: 'columnNameRes': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(180,13): warning C4101: 'res': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(179,12): warning C4101: 'row': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(219,13): warning C4101: 'res': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(218,12): warning C4101: 'row': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(104,13): warning C4101: 'columnNameRes': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(146,13): warning C4101: 'columnNameRes': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(182,13): warning C4101: 'res': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(181,12): warning C4101: 'row': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(221,13): warning C4101: 'res': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(220,12): warning C4101: 'row': unreferenced local variable
   Generating code
-  2 of 105 functions ( 1.9%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  44 of 143 functions (30.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    14 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Apple-Product-Management-System.vcxproj -> C:\Users\USER\Source\Repos\Shaunmak1214\Apple-Product-Management-System\x64\Release\Apple-Product-Management-System.exe

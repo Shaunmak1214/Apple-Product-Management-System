@@ -35,7 +35,10 @@
     <ClInclude Include="Total-Product.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="search.h">
+    <ClInclude Include="searchId.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="searchName.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

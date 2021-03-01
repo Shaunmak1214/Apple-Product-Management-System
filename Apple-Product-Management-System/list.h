@@ -14,6 +14,7 @@ struct Node {
 Node* head;
 Node* idhead;
 Node* namehead;
+Node* smallnamehead;
 
 class linkedList {
 
