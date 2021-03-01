@@ -26,15 +26,7 @@ int getTotal() {
 	if (conn)
 	{
 		puts("Successful connection to database !!! ");
-		//string columnNameSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = N'products'";
-		//const char* columnQ = columnNameSql.c_str();
-		//columnQState = mysql_query(conn, columnQ);
-		//if (columnQState) {
 
-		//	columnNameRes = mysql_store_result(conn);
-		//	columnNameRow = mysql_fetch_row(columnNameRes);
-
-		//}
 		string query = "SELECT * FROM products";
 		const char* q = query.c_str();
 		pstate = mysql_query(conn, q);
