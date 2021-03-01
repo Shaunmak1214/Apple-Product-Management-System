@@ -6,7 +6,7 @@
 #include <iostream>
 #include <string>
 
-void printList();
+void storeList();
 void insert(string name, string category, string price, string colors);
 void update(string id, string name, string category, string price, string colors);
 
@@ -14,7 +14,7 @@ using namespace std;
 int qstate;
 int columnQState;
 
-void printList() {
+void storeList() {
 
 	linkedList list;
 	head = NULL;
@@ -175,8 +175,9 @@ int main()
 
 	linkedList list;
 
-	printList();
+	storeList();
 	list.printList(head);
+	
 
 	/*insert("Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");*/
 

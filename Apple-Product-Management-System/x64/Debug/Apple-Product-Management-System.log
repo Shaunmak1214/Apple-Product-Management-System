@@ -1,0 +1,13 @@
+﻿  dbconn.cpp
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\dbconn.cpp(8,13): warning C4101: 'res': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\dbconn.cpp(7,12): warning C4101: 'row': unreferenced local variable
+  Main.cpp
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(4,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp : message : see previous definition of '_CRT_SECURE_NO_WARNINGS'
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(27,13): warning C4101: 'columnNameRes': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(94,13): warning C4101: 'res': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(93,12): warning C4101: 'row': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(133,13): warning C4101: 'res': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(132,12): warning C4101: 'row': unreferenced local variable
+  Generating Code...
+  Apple-Product-Management-System.vcxproj -> C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\x64\Debug\Apple-Product-Management-System.exe

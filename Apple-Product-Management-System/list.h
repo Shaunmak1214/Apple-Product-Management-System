@@ -60,5 +60,4 @@ public:
 			counter++;
 		}
 	}
-
 };
