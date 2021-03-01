@@ -10,5 +10,3 @@ using namespace std;
 
 void bubbleSort();
 int binarySearch(int[], int, int);
-
-

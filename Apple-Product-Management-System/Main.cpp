@@ -1,13 +1,16 @@
 #include "db.h"
 #include "list.h"
-#include <mysql.h>
+#include "search.h"
 #include "Sort-Insertion.h"
+#include <mysql.h>
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
 #include <string>
 
-void storeList();
+void storeAllList();
+void storeIdList();
+void storeNameList();
 void insert(string name, string category, string price, string colors);
 void update(string id, string name, string category, string price, string colors);
 
@@ -15,7 +18,7 @@ using namespace std;
 int qstate;
 int columnQState;
 
-void storeList() {
+void storeAllList() {
 
 	linkedList list;
 	head = NULL;
@@ -86,6 +89,88 @@ void storeList() {
 		puts("Connection to database has failed!");
 	}
 
+}
+
+void storeIdList()
+{
+	linkedList idList;
+	idhead = NULL;
+	string id;
+	MYSQL* conn;
+	MYSQL_ROW row;
+	MYSQL_ROW columnNameRow = NULL;
+	MYSQL_RES* res;
+	MYSQL_RES* columnNameRes;
+	conn = initConnection();
+
+	if (conn)
+	{
+		string query = "SELECT * FROM products";
+		const char* q = query.c_str();
+		qstate = mysql_query(conn, q);
+		if (!qstate)
+		{
+			res = mysql_store_result(conn);
+			int numfields = mysql_num_fields(res);
+			int i = 0;
+
+			while (row = mysql_fetch_row(res))
+			{
+				id = "";
+				id += row[0];
+				idList.append(&idhead, id);
+			}
+		}
+		else
+		{
+			cout << "Query failed: " << mysql_error(conn) << endl;
+		}
+	}
+	else
+	{
+		puts("Connection to database has failed!");
+	}
+}
+
+void storeNameList()
+{
+	linkedList nameList;
+	namehead = NULL;
+	string name;
+	MYSQL* conn;
+	MYSQL_ROW row;
+	MYSQL_ROW columnNameRow = NULL;
+	MYSQL_RES* res;
+	MYSQL_RES* columnNameRes;
+	conn = initConnection();
+
+	if (conn)
+	{
+		string query = "SELECT * FROM products";
+		const char* q = query.c_str();
+		qstate = mysql_query(conn, q);
+		if (!qstate)
+		{
+			res = mysql_store_result(conn);
+			int numfields = mysql_num_fields(res);
+			int i = 0;
+
+			while (row = mysql_fetch_row(res))
+			{
+				name = "";
+				name += row[1];
+				nameList.append(&namehead, name);
+			}
+		}
+		else
+		{
+			cout << "Query failed: " << mysql_error(conn) << endl;
+		}
+	}
+	else
+	{
+		puts("Connection to database has failed!");
+	}
 }
 
 void insert(string name, string category, string price, string colors) {
@@ -175,15 +260,22 @@ int main()
 {
 
 	linkedList list;
+	linkedList idList;
+	linkedList nameList;
 
-	storeList();
+	storeAllList();
 	list.printList(head);
+	storeIdList();
+	idList.printList(idhead);
+	storeNameList();
+	nameList.printList(namehead);
 	
 
 	/*insert("Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");*/
 
 	/*update("1", "Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");*/
 
-	InsertSort();
+	//InsertSort();
+	//bubbleSort();
 
 }
