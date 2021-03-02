@@ -1,6 +1,7 @@
 #include "db.h"
 #include "list.h"
 #include "searchName.h"
+#include "searchId.h"
 #include "Sort-Insertion.h"
 #include <mysql.h>
 #define _CRT_SECURE_NO_WARNINGS
@@ -264,6 +265,7 @@ int main()
 	linkedList list;
 	linkedList idList;
 	linkedList nameList;
+	//intLinkedList intIdList;
 
 	storeAllList();
 	list.printList(head);
@@ -282,7 +284,7 @@ int main()
 	//InsertSort();
 	//bubbleSort();
 
-	searchName(); //Done
-	//searchId();
+	//searchName(); //Done
+	searchId();
 
 }
