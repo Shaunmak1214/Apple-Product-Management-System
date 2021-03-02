@@ -12,6 +12,9 @@ void storeIntId(Node* idhead);
 void bubbleSort(struct idNode** intidhead);
 struct idNode* swap(struct idNode* ptr1, struct idNode* ptr2);
 void printList(struct idNode* intidhead);
+int getCount(idNode* intidhead);
+struct idNode* binarySearch(idNode* intidhead, int prodId);
+struct idNode* middle(idNode* first, idNode* last);
 
 //int binarySearch(int[], int, int);
 
@@ -77,6 +80,8 @@ void searchId()
 	linkedList idList;
 
 	int prodId;
+	int count;
+	int found;
 
 	cout << "SEARCH PRODUCT" << endl;
 	cout << "Enter the ID of product: ";
@@ -86,6 +91,11 @@ void searchId()
 	storeIntId(idhead);
 	bubbleSort(&intidhead);
 	printList(intidhead);
+	count = getCount(intidhead);
+
+	cout << "Count: " << count;
+	idNode* head = binarySearch(intidhead, prodId);
+	cout << endl <<  "Data: " << head->data;
 	//idList.printList(idhead);
 }
 
@@ -147,7 +157,7 @@ struct idNode* swap(struct idNode* ptr1, struct idNode* ptr2)
 	return ptr2;
 }
 
-void printList(struct idNode* intidhead)
+void printList(struct idNode* intidhead) //Test output
 {
 	while (intidhead != NULL)
 	{
@@ -157,64 +167,68 @@ void printList(struct idNode* intidhead)
 	cout << endl;
 }
 
-/*void searchId()
+int getCount(idNode* intidhead)
 {
-	intLinkedList idList;
-	int prodId;
-	//
-	int listSize = 10;
-
-	cout << "SEARCH PRODUCT" << endl;
-	cout << "Enter the ID of product: ";
-	cin >> prodId;
-
-
-	bubbleSort(id);
-	//idList.printList(idhead);
+	int count = 0; // Initialize count  
+	idNode* current = intidhead; // Initialize current  
+	while (current != NULL)
+	{
+		count++;
+		current = current->next;
+	}
+	return count;
 }
 
-void bubbleSort(struct Node* id)
+//int binarySearch(idNode* intidhead, int count, int prodId)
+struct idNode* binarySearch(idNode* intidhead, int prodId)
 {
-	int swapped;
-	struct Node* ptr1;
-	struct Node* lptr = NULL;
-
-	/* Checking for empty list */
-	/*if (id == NULL)
-		return;
+	struct idNode* first = intidhead;
+	struct idNode* last = NULL;
 
 	do
 	{
-		swapped = 0;
-		ptr1 = id;
+		// Find middle 
+		idNode* mid = middle(first, last);
 
-		while (ptr1->next != lptr)
-		{
-			if (ptr1->data > ptr1->next->data)
-			{
-				swap(ptr1, ptr1->next);
-				swapped = 1;
-			}
-			ptr1 = ptr1->next;
-		}
-		lptr = ptr1;
-	} while (swapped);
+		// If middle is empty 
+		if (mid == NULL)
+			return NULL;
+
+		// If value is present at middle 
+		if (mid->data == prodId)
+			return mid;
+
+		// If value is more than mid 
+		else if (mid->data < prodId)
+			first = mid->next;
+
+		// If the value is less than mid. 
+		else
+			last = mid;
+
+	} while (last == NULL ||
+		last != first);
+
+	// value not present 
+	return NULL;
 }
 
-void printList(struct Node* start)
+struct idNode* middle(idNode* first, idNode* last)
 {
-	struct Node* temp = start;
-	printf("\n");
-	while (temp != NULL)
+	if (first == NULL)
+		return NULL;
+
+	struct idNode* slow = first;
+	struct idNode* fast = first->next;
+	while (fast != last) 
 	{
-		printf("%p ", temp->data);
-		temp = temp->next;
-	}
-}
+		fast = fast->next;
 
-void swap(struct Node* a, struct Node* b)
-{
-	int temp = a->data;
-	a->data = b->data;
-	b->data = temp;
-}*/
+		if (fast != last) 
+		{
+			slow = slow->next;
+			fast = fast->next;
+		}
+	}
+	return slow;
+}
