@@ -27,8 +27,7 @@ void searchName()
 	cout << "SEARCH PRODUCT" << endl;
 	cout << "Enter the name of product: ";
 	getline(cin, prodName);
-	//cin.ignore();
-
+	cin.ignore();
 
 	found = converSearchName(prodName, &namehead, &smallnamehead);
 	cout << "Found: " << found;

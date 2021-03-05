@@ -19,7 +19,6 @@ Node* smallnamehead;
 class linkedList {
 
 public:
-	int data;
 
 	void append(Node** head_ref, string new_data)
 	{
