@@ -14,7 +14,12 @@ void storeIdList();
 void storeNameList();
 void insert(string name, string category, string price, string colors);
 void update(string id, string name, string category, string price, string colors);
-void menu();
+int menu();
+void display();
+void add();
+void edit();
+void deleteProduct();
+void search();
 
 using namespace std;
 int qstate;
@@ -262,7 +267,7 @@ void update(string id, string name, string category, string price, string colors
 
 int main()
 {
-
+	int option;
 	linkedList list;
 	linkedList idList;
 	linkedList nameList;
@@ -270,8 +275,10 @@ int main()
 
 	//Used storeAllList();
 	//Used //list.printList(head); //Test output
-	storeIdList();
+
+	//Used storeIdList();
 	//idList.printList(idhead); //Test output
+
 	storeNameList();
 	//nameList.printList(namehead); //Test output
 
@@ -280,7 +287,11 @@ int main()
 	cout << "|       WELCOME TO APPLE PRODUCT MANAGEMENT SYSTEM!       |" << endl;
 	cout << "|                                                         |" << endl;
 
-	menu();
+	do
+	{
+		option = menu();
+	}
+	while(option != 0);
 
 
 	
@@ -290,32 +301,32 @@ int main()
 	//Used /*update("1", "Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");*/
 
 	//InsertSort();
-	//bubbleSort();
-
-	//searchName(); //Done
-	searchId();
+	
+	//Used //bubbleSort();
+	//Used //searchName(); //Done
+	//Used //searchId(); //Done
 
 }
 
-void menu()
+int menu()
 {
 	int action;
-	linkedList list;
 
-	cout << "|=========================================================|" << endl;
+	cout << "+=========================================================+" << endl;
 	cout << "|                          MENU                           |" << endl;
 	cout << "|=========================================================|" << endl;
-	cout << "|             Display all products         1              |" << endl;
-	cout << "|             Add product                  2              |" << endl;
-	cout << "|             Edit product                 3              |" << endl;
-	cout << "|             Delete product               4              |" << endl;
-	cout << "|             Search product               5              |" << endl;
+	cout << "|             Display product              1              |" << endl;
+	cout << "|             Search product               2              |" << endl;
+	cout << "|             Add product                  3              |" << endl;
+	cout << "|             Edit product                 4              |" << endl;
+	cout << "|             Delete product               5              |" << endl;
 	cout << "|=========================================================|" << endl;
 	//cout << "|             BACK                         9              |" << endl; //use on other menu
 	cout << "|             EXIT                         0              |" << endl;
 	cout << "+.........................................................+" << endl;
 	cout << "Please choose an action above: ";
 	cin >> action;
+	cout << endl;
 
 	while (action != 1 && action != 2 && action != 3 && action != 4 && action != 5 && action != 9 && action != 0)
 	{
@@ -326,12 +337,121 @@ void menu()
 
 	switch (action)
 	{
-		case 1: storeAllList(); list.printList(head); break;
-		case 2: insert("Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green"); break;
-		case 3: update("1", "Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green"); break;
-		case 4: break;
-		case 5: break;
-		case 0: break;
-		default: cout << "Invalid choice." << endl; break;
+		case 1: display(); break;
+		case 2: search(); break;
+		case 3: add(); break;
+		case 4: edit(); break;
+		case 5: deleteProduct(); break;
+		case 0: exit(0); break;
+		default: cout << "Invalid choice." << endl; exit(1); break;
 	}
+
+	return action;
+}
+
+void display()
+{
+	int action;
+	linkedList list;
+
+	cout << endl;
+	cout << "+-----------------------------------------------------+" << endl;
+	cout << "|                   DISPLAY PRODUCT                   |" << endl;
+	cout << "|-----------------------------------------------------|" << endl;
+	cout << "|         Display all product details       1         |" << endl;
+	cout << "|         Sort by                           2         |" << endl;
+	cout << "|-----------------------------------------------------|" << endl;
+	cout << "|         BACK                              9         |" << endl;
+	cout << "|         EXIT                              0         |" << endl;
+	cout << "+.....................................................+" << endl;
+	cout << "Please select your choice: ";
+	cin >> action;
+
+	while (action != 1 && action != 2 && action != 9 && action != 0)
+	{
+		cout << "Invalid choice." << endl << endl;
+		cout << "Please enter an valid action: ";
+		cin >> action;
+	}
+
+	switch (action)
+	{
+		case 1: storeAllList(); list.printList(head); break;
+		case 2: break;
+		case 9: action = menu(); break;
+		case 0: exit(0); break;
+		default: cout << "Invalid choice." << endl; exit(1); break;
+	}
+}
+
+void search()
+{
+	int action;
+
+	cout << endl;
+	cout << "+-----------------------------------------------------+" << endl;
+	cout << "|                   SEARCH PRODUCT                    |" << endl;
+	cout << "|-----------------------------------------------------|" << endl;
+	cout << "|           Search by product ID          1           |" << endl;
+	cout << "|           Search by product name        2           |" << endl;
+	cout << "|-----------------------------------------------------|" << endl;
+	cout << "|           BACK                          9           |" << endl;
+	cout << "|           EXIT                          0           |" << endl;
+	cout << "+.....................................................+" << endl;
+	cout << "Please select your choice: ";
+	cin >> action;
+	cout << endl;
+
+	while (action != 1 && action != 2 && action != 9 && action != 0)
+	{
+		cout << "Invalid choice." << endl << endl;
+		cout << "Please enter an valid action: ";
+		cin >> action;
+	}
+
+	switch (action)
+	{
+	case 1: storeIdList(); searchId(); break;
+	case 2: searchName(); break;
+	case 9: action = menu(); break;
+	case 0: exit(0); break;
+	default: cout << "Invalid choice." << endl; exit(1); break;
+	}
+}
+
+void add()
+{
+	string name, category, color;
+	double price;
+
+	cout << endl;
+	cout << "+---------------------------------------------------+" << endl;
+	cout << "                     ADD PRODUCT                     " << endl;
+	cout << "+---------------------------------------------------+" << endl;
+	cout << "Please fill in the product details  below" << endl << endl;
+	cout << "Product name     : ";
+	getline(cin, name);
+	cin.ignore();
+	cout << "Product category : ";
+	getline(cin, category);
+	cin.ignore();
+	cout << "Product price    : "; //Infinity loop?
+	cin >> price;
+	cout << "Product color    : ";
+	getline(cin, color);
+	cin.ignore();
+
+	cout << name << category << price << color; //Test output
+
+	//insert("Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");
+}
+
+void edit()
+{
+	//update("1", "Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");
+}
+
+void deleteProduct()
+{
+
 }

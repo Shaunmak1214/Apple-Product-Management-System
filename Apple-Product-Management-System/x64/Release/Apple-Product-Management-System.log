@@ -10,19 +10,19 @@ C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Pr
 C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Sort-Insertion.h(38,13): warning C4101: 'columnNameRes': unreferenced local variable
 C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(7,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
 C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp : message : see previous definition of '_CRT_SECURE_NO_WARNINGS'
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(33,13): warning C4101: 'columnNameRes': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(106,13): warning C4101: 'columnNameRes': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(148,13): warning C4101: 'columnNameRes': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(184,13): warning C4101: 'res': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(183,12): warning C4101: 'row': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(223,13): warning C4101: 'res': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(222,12): warning C4101: 'row': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(268,13): warning C4101: 'nameList': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(267,13): warning C4101: 'idList': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(266,13): warning C4101: 'list': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(38,13): warning C4101: 'columnNameRes': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(111,13): warning C4101: 'columnNameRes': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(153,13): warning C4101: 'columnNameRes': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(189,13): warning C4101: 'res': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(188,12): warning C4101: 'row': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(228,13): warning C4101: 'res': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(227,12): warning C4101: 'row': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(273,13): warning C4101: 'nameList': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(272,13): warning C4101: 'idList': unreferenced local variable
+C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(271,13): warning C4101: 'list': unreferenced local variable
   Generating code
-  28 of 132 functions (21.2%) were compiled, the rest were copied from previous compilation.
+  3 of 160 functions ( 1.9%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    7 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Apple-Product-Management-System.vcxproj -> C:\Users\USER\Source\Repos\Shaunmak1214\Apple-Product-Management-System\x64\Release\Apple-Product-Management-System.exe

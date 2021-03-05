@@ -16,8 +16,6 @@ int getCount(idNode* intidhead);
 struct idNode* binarySearch(idNode* intidhead, int prodId);
 struct idNode* middle(idNode* first, idNode* last);
 
-//int binarySearch(int[], int, int);
-
 struct idNode {
 
 	int data;
@@ -83,19 +81,23 @@ void searchId()
 	int count;
 	int found;
 
-	cout << "SEARCH PRODUCT" << endl;
-	cout << "Enter the ID of product: ";
+	cout << endl;
+	cout << "+---------------------------------------------------+" << endl;
+	cout << "                   SEARCH PRODUCT                    " << endl;
+	cout << "+---------------------------------------------------+" << endl;
+	cout << "Enter the product ID: ";
 	cin >> prodId;
-
 
 	storeIntId(idhead);
 	bubbleSort(&intidhead);
-	printList(intidhead);
-	count = getCount(intidhead);
+	printList(intidhead); //Test output
 
+	count = getCount(intidhead);
 	cout << "Count: " << count;
+
 	idNode* head = binarySearch(intidhead, prodId);
 	cout << endl <<  "Data: " << head->data;
+
 	//idList.printList(idhead);
 }
 
