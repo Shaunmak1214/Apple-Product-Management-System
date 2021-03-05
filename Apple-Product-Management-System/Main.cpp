@@ -2,7 +2,11 @@
 #include "list.h"
 #include "searchName.h"
 #include "Sort-Insertion.h"
+<<<<<<< Updated upstream
 #include <mysql.h>
+=======
+#include "Sort-Selection.h"
+>>>>>>> Stashed changes
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
@@ -279,10 +283,15 @@ int main()
 
 	/*update("1", "Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");*/
 
+<<<<<<< Updated upstream
 	//InsertSort();
 	//bubbleSort();
 
 	searchName(); //Done
 	//searchId();
 
+=======
+	InsertSort();
+	SelectSort();
+>>>>>>> Stashed changes
 }

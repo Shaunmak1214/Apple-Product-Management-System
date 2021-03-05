@@ -9,8 +9,6 @@
 
 using namespace std;
 
-int getTotal();
-
 int getTotal() {
 
 	MYSQL* conn;
@@ -25,7 +23,7 @@ int getTotal() {
 
 	if (conn)
 	{
-		puts("Successful connection to database !!! ");
+		puts("Total Successful connection to database !!! ");
 
 		string query = "SELECT * FROM products";
 		const char* q = query.c_str();
@@ -35,6 +33,8 @@ int getTotal() {
 			res = mysql_store_result(conn);
 			numRows = mysql_num_rows(res);
 			cout << "Total NumRows = " << numRows << endl;
+			return numRows;
+			mysql_close(conn);
 		}
 		else
 		{
@@ -46,6 +46,5 @@ int getTotal() {
 	{
 		puts("Connection to database has failed!");
 	}
-
-	return numRows;
+	return 0;
 }

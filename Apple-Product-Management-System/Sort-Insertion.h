@@ -18,9 +18,9 @@ struct Product {
     string category = "";
 	string price = "";
 	string color = "";
-
 };
 
+int total = getTotal();
 
 // list = the amount of total product
 
@@ -29,7 +29,7 @@ Product* getProductData()
 	int state;
 
 	Product* p;
-	p = new (nothrow) Product[getTotal()];
+	p = new (nothrow) Product[total];
 
 	MYSQL* conn;
 	MYSQL_ROW row;
@@ -40,24 +40,14 @@ Product* getProductData()
 
 	if (conn)
 	{
-		puts("Successful connection to database !!! ");
-		//string columnNameSql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = N'products'";
-		//const char* columnQ = columnNameSql.c_str();
-		//columnQState = mysql_query(conn, columnQ);
-		//if (columnQState) {
+		puts("Insertion Successful connection to database !!! ");
 
-		//	columnNameRes = mysql_store_result(conn);
-		//	columnNameRow = mysql_fetch_row(columnNameRes);
-
-		//}
 		string query = "SELECT * FROM products";
 		const char* q = query.c_str();
 		state = mysql_query(conn, q);
 		if (!state)
 		{
 			res = mysql_store_result(conn);
-			int numRows = 0;
-			numRows = mysql_num_rows(res);
 			int i = 0;
 
 			while (row = mysql_fetch_row(res))
@@ -67,9 +57,14 @@ Product* getProductData()
 				p[i].category = row[2];
 				p[i].price = row[3];
 				p[i].color = row[4];
-
+				 
+				cout << "Check while loop" << endl;
 				i++;
 			}
+
+			mysql_close(conn);
+			return p;
+			cout << "Check p return " << p << endl;
 
 		}
 		else
@@ -81,40 +76,38 @@ Product* getProductData()
 	{
 		puts("Connection to database has failed!");
 	}
+	cout << "Check connection" << endl;
 
-	return p;
+	return 0;
 }
-
 
 int InsertSort()
 {
-	Product* pd, temp;
-	pd = new (nothrow) Product[getTotal()];
-	pd = getProductData();
 
-	int total = getTotal();
-
-    for (int i = 0; i < total; i++) {
-
+	Product* p, temp;
+	p = new (nothrow) Product[total];
+	p = getProductData();
+	
+    for (int i = 0; i < total; i++) 
+	{
         //Insertion Sort
-        temp = pd[i];  // copy database into temp
-        int j = i;    // assign current index to j
+        temp = p[i];  // copy database into temp
+        int j = i;    // assign current index to jCounting 
 
-        while (j > 0 && temp.name < pd[j - 1].name) { //if 
-
-            pd[j] = pd[j - 1];  //swap the value
+        while (j > 0 && temp.name < p[j - 1].name) 
+		{ 
+            p[j] = p[j - 1];  //swap the value
             j--;
-            pd[j] = temp;    // reset the temp value
+            p[j] = temp;    // reset the temp value
         }
     }
 
     cout << "Display of Product : " << endl;
     cout << "No\tId\tName\tCategory" << endl;
 
-    for (int i = 0; i < total; i++) {
-
-        cout << i + 1 << "\t" << pd[i].id << "\t" << pd[i].name << "\t" << pd[i].category << endl;
-
+    for (int i = 0; i < total; i++) 
+	{
+        cout << i + 1 << "\t" << p[i].id << "\t" << p[i].name << "\t" << p[i].category << endl;
     }
 
 	return 0;
