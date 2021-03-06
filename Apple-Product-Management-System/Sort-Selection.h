@@ -8,17 +8,17 @@
 #include <mysql.h>
 #include <string>
 #include "db.h"
-#include "Total-Product.h"
+#include "product.h"
 
 using namespace std;
 
 struct Details {
-	string id = "";
-	string name = "";
-	string category = "";
-	string price = "";
-	string color = "";
-
+	string id;
+	string code;
+	string name;
+	string category;
+	string price;
+	string color;
 };
 
 int Rows = getTotal();
@@ -46,6 +46,7 @@ Details* getDetails()
 		string query = "SELECT * FROM products";
 		const char* q = query.c_str();
 		state = mysql_query(conn, q);
+
 		if (!state)
 		{
 			res = mysql_store_result(conn);
@@ -55,10 +56,11 @@ Details* getDetails()
 			while (row = mysql_fetch_row(res))
 			{
 				pd[i].id = row[0];
-				pd[i].name = row[1];
-				pd[i].category = row[2];
-				pd[i].price = row[3];
-				pd[i].color = row[4];
+				pd[i].code = row[1];
+				pd[i].name = row[2];
+				pd[i].category = row[3];
+				pd[i].price = row[4];
+				pd[i].color = row[5];
 
 				i++;
 			}
@@ -79,49 +81,24 @@ Details* getDetails()
 	return 0;
 }
 
-int selectMin(int position)
+int selectMin(Details pd[], int position)
 {
-	Details* pd;
-	pd = new (nothrow) Details[Rows];
 
 	int index = position; // index of the current position
 	Details temp;
 	temp = pd[position];   // get the value of current position
 
-	for (int i = 0; i < Rows; i++) 
+	for (int i = position + 1; i < Rows; i++)
 	{
-		if (pd[i].category < temp.category) 
+		if (pd[i].category < temp.category)
 		{
 			temp = pd[i];  //swap the position 
 			index = i;
+			cout << index << endl;
 		}
 	}
 
 	return index;
-}
-
-// function to swap the the position of two elements
-void swap(string* a, string* b) {
-	int temp = *a;
-	*a = *b;
-	*b = temp;
-}
-
-void sortData(Details* pd[])
-{
-	Details current;
-
-	for (int i = 0; i < total - 1; i++)
-	{
-		int min = selectMin(i);
-
-		if (pd[min].category < pd[i].category)
-		{
-			current = pd[min];
-			pd[min] = pd[i];      // swap the position
-			pd[i] = current;	  // swap the position
-		}
-	}
 }
 
 int SelectSort()
@@ -130,14 +107,28 @@ int SelectSort()
 	pd = new (nothrow) Details[Rows];
 	pd = getDetails();
 
-	sortData(&pd[]);
+	//sortData(&pd[]);
 
-	cout << "Display of Product : " << endl;
-	cout << "No\tId\tName\tCategory" << endl;
-
-	for (int i = 0; i < Rows; i++) 
+	for (int i = 0; i < Rows - 1; i++)
 	{
-		cout << i + 1 << "\t" << pd[i].id << "\t" << pd[i].name << "\t" << pd[i].category << endl;
+		int min = selectMin(pd, i);
+		cout << min << endl;
+
+		if (pd[min].category < pd[i].category)
+		{
+			current = pd[min];
+			pd[min] = pd[i];      // swap the position
+			pd[i] = current;	  // swap the position
+
+		}
+	}
+
+	cout << "Product Sorted By Category : " << endl;
+	cout << setw(5) << left << "No" << setw(5) << "Id" << setw(8) << "Code" << setw(30) << "Name" << setw(15) << "Category" << setw(10) << "Price" << setw(25) << "Colors" << endl;
+
+	for (int i = 0; i < Rows; i++)
+	{
+		cout << setw(5) << i + 1 << setw(5) << pd[i].id << setw(8) << pd[i].code << setw(30) << pd[i].name << setw(15) << pd[i].category << setw(10) << pd[i].price << setw(25) << pd[i].color << endl;
 	}
 
 	return 0;

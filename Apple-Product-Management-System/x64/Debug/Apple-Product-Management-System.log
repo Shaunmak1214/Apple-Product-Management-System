@@ -1,13 +1,25 @@
-﻿  dbconn.cpp
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\dbconn.cpp(8,13): warning C4101: 'res': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\dbconn.cpp(7,12): warning C4101: 'row': unreferenced local variable
-  Main.cpp
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(4,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp : message : see previous definition of '_CRT_SECURE_NO_WARNINGS'
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(27,13): warning C4101: 'columnNameRes': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(94,13): warning C4101: 'res': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(93,12): warning C4101: 'row': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(133,13): warning C4101: 'res': unreferenced local variable
-C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(132,12): warning C4101: 'row': unreferenced local variable
-  Generating Code...
-  Apple-Product-Management-System.vcxproj -> C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\x64\Debug\Apple-Product-Management-System.exe
+﻿  Main.cpp
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\searchName.h(24,13): warning C4101: 'nameList': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\searchName.h(25,13): warning C4101: 'smallNameList': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\searchId.h(82,6): warning C4101: 'found': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\searchId.h(78,13): warning C4101: 'idList': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\product.h(34,28): warning C4244: '=': conversion from 'my_ulonglong' to 'int', possible loss of data
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\product.h(18,13): warning C4101: 'columnNameRes': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\product.h(15,12): warning C4101: 'row': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Sort-Insertion.h(40,13): warning C4101: 'columnNameRes': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Sort-Selection.h(39,13): warning C4101: 'columnNameRes': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Sort-Merge.h(40,13): warning C4101: 'columnNameRes': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(11,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp : message : see previous definition of '_CRT_SECURE_NO_WARNINGS'
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(42,13): warning C4101: 'columnNameRes': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(115,13): warning C4101: 'columnNameRes': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(157,13): warning C4101: 'columnNameRes': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(193,13): warning C4101: 'res': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(192,12): warning C4101: 'row': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(232,13): warning C4101: 'res': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(231,12): warning C4101: 'row': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(277,13): warning C4101: 'nameList': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(276,13): warning C4101: 'idList': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(275,13): warning C4101: 'list': unreferenced local variable
+  LINK : D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\x64\Debug\Apple-Product-Management-System.exe not found or not built by the last incremental link; performing full link
+  Apple-Product-Management-System.vcxproj -> D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\x64\Debug\Apple-Product-Management-System.exe

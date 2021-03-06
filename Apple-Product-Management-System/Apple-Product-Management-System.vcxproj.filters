@@ -32,13 +32,19 @@
     <ClInclude Include="Sort-Insertion.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Total-Product.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="searchId.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="searchName.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort-Selection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort-Merge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="product.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

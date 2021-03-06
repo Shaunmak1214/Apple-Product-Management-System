@@ -3,11 +3,10 @@
 #include "searchName.h"
 #include "searchId.h"
 #include "Sort-Insertion.h"
-<<<<<<< Updated upstream
-#include <mysql.h>
-=======
 #include "Sort-Selection.h"
->>>>>>> Stashed changes
+#include "Sort-Merge.h"
+#include <mysql.h>
+
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
@@ -294,19 +293,16 @@ int main()
 	do
 	{
 		option = menu();
-	}
-	while(option != 0);
+	} while (option != 0);
 
 
-	
+
 
 	//Used /*insert("Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");*/
 
 	//Used /*update("1", "Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");*/
 
-<<<<<<< Updated upstream
-	//InsertSort();
-	
+
 	//Used //bubbleSort();
 	//Used //searchName(); //Done
 	//Used //searchId(); //Done
@@ -342,13 +338,13 @@ int menu()
 
 	switch (action)
 	{
-		case 1: display(); break;
-		case 2: search(); break;
-		case 3: add(); break;
-		case 4: edit(); break;
-		case 5: deleteProduct(); break;
-		case 0: exit(0); break;
-		default: cout << "Invalid choice." << endl; exit(1); break;
+	case 1: display(); break;
+	case 2: search(); break;
+	case 3: add(); break;
+	case 4: edit(); break;
+	case 5: deleteProduct(); break;
+	case 0: exit(0); break;
+	default: cout << "Invalid choice." << endl; exit(1); break;
 	}
 
 	return action;
@@ -360,19 +356,21 @@ void display()
 	linkedList list;
 
 	cout << endl;
-	cout << "+-----------------------------------------------------+" << endl;
-	cout << "|                   DISPLAY PRODUCT                   |" << endl;
-	cout << "|-----------------------------------------------------|" << endl;
-	cout << "|         Display all product details       1         |" << endl;
-	cout << "|         Sort by                           2         |" << endl;
-	cout << "|-----------------------------------------------------|" << endl;
-	cout << "|         BACK                              9         |" << endl;
-	cout << "|         EXIT                              0         |" << endl;
-	cout << "+.....................................................+" << endl;
+	cout << "+-------------------------------------------------------+" << endl;
+	cout << "|                   DISPLAY PRODUCT                     |" << endl;
+	cout << "|-------------------------------------------------------|" << endl;
+	cout << "|         Display all product details         1         |" << endl;
+	cout << "|         Sort by Name     (Insertion Sort)   2         |" << endl;
+	cout << "|         Sort by Category (Selection Sort)   3         |" << endl;
+	cout << "|         Sort by Price    (Merge Sort)       4         |" << endl;
+	cout << "|-------------------------------------------------------|" << endl;
+	cout << "|         BACK                                9         |" << endl;
+	cout << "|         EXIT                                0         |" << endl;
+	cout << "+.......................................................+" << endl;
 	cout << "Please select your choice: ";
 	cin >> action;
 
-	while (action != 1 && action != 2 && action != 9 && action != 0)
+	while (action != 1 && action != 2 && action != 3 && action != 4 && action != 9 && action != 0)
 	{
 		cout << "Invalid choice." << endl << endl;
 		cout << "Please enter an valid action: ";
@@ -381,11 +379,13 @@ void display()
 
 	switch (action)
 	{
-		case 1: storeAllList(); list.printList(head); break;
-		case 2: break;
-		case 9: action = menu(); break;
-		case 0: exit(0); break;
-		default: cout << "Invalid choice." << endl; exit(1); break;
+	case 1: storeAllList(); list.printList(head); break;
+	case 2: InsertSort(); break;
+	case 3: SelectSort(); break;
+	case 4: MergeSorting(); break;
+	case 9: action = menu(); break;
+	case 0: exit(0); break;
+	default: cout << "Invalid choice." << endl; exit(1); break;
 	}
 }
 
@@ -459,8 +459,5 @@ void edit()
 void deleteProduct()
 {
 
-=======
-	InsertSort();
-	SelectSort();
->>>>>>> Stashed changes
+
 }

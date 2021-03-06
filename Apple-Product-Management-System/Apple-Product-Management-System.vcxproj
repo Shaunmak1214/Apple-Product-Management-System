@@ -152,7 +152,9 @@
     <ClInclude Include="db.h" />
     <ClInclude Include="searchId.h" />
     <ClInclude Include="searchName.h" />
-    <ClInclude Include="Total-Product.h" />
+    <ClInclude Include="Sort-Merge.h" />
+    <ClInclude Include="Sort-Selection.h" />
+    <ClInclude Include="product.h" />
     <ClInclude Include="Sort-Insertion.h" />
     <ClInclude Include="list.h" />
   </ItemGroup>
