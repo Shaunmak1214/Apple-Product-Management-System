@@ -5,9 +5,9 @@
 ---
 
 ### <p align="center">:raised_hand:Technologies Highlights:</p>
-#### SQL Connector C++
-#### C++ Language
-#### remotemysql (as server)
+#### 1). SQL Connector C++
+#### 2). C++ Language
+#### 3). remotemysql (as server)
 
 ---
 
