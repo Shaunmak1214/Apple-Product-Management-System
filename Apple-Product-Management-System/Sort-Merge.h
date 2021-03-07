@@ -25,6 +25,10 @@ struct Products {
 
 // num of total Products
 int totalRows = getTotal();
+void Merge(Products* pr, int lpos, int rpos, int rend);
+Products* getProductDetails();
+void MergeSort(Products* pr, int left, int right);
+void PrintProducts(Products* pr);
 
 
 Products* getProductDetails()
@@ -43,8 +47,6 @@ Products* getProductDetails()
 
 	if (conn)
 	{
-		puts("Insertion Successful connection to database (Merge) !!! ");
-
 		string query = "SELECT * FROM products";
 		const char* q = query.c_str();
 		states = mysql_query(conn, q);
@@ -84,113 +86,59 @@ Products* getProductDetails()
 	return 0;
 }
 
-
-void Merge(Products* pr, int low, int mid, int high)
+void Merge(Products* pr, int lpos, int rpos, int rend)
 {
-	cout << "Hello Inside Merge " << endl;
-	//
-	//Products* TempArr;
-	//TempArr = new (nothrow) Products[totalRows];
-	//int i;
-	//int leftEnd = mid - 1;
-	//int tempPos = left;
-	//int numElements = right - left + 1;
+	int lend, numElements, tempPos;
 
-	//while (left <= leftEnd && mid <= right)
-	//{
-	//	cout << "while (left <= leftEnd && mid <= right) " << endl;
+	Products* tempArr;
+	tempArr = new (nothrow) Products[totalRows];
 
-	//	if (pr[left].price <= pr[mid].price){
-	//		TempArr[tempPos++] = pr[left++];
-	//	cout << "if (pr[left].price <= pr[mid].price) " << endl;
-	//}
-	//	else {
-	//		TempArr[tempPos++] = pr[mid++];
+	lend = rpos - 1;
+	tempPos = lpos;
+	numElements = rend - lpos + 1;
 
-	//	}
-	//}
-
-	//while (left <= mid)
-	//{
-	//	cout << "while (left <= mid)" << endl;
-
-	//	TempArr[tempPos++]  = pr[left++] ;
-	//}
-	//while (mid <= right)
-	//{
-	//	cout << "while (mid <= right)" << endl;
-
-	//	TempArr[tempPos++]  = pr[mid++] ;
-	//}
-	//for (i = 0; i < totalRows; i++, right++)
-	//{
-	//	pr[right]  = TempArr[right] ;
-	//}
-
-	//cout << "End Merge" << endl;
-
-
-	//free(TempArr);
-	//
-
-	int size = high - low + 1;
-	Products* tempArr = new (nothrow) Products[totalRows];
-	int mergepos = 0;
-	int leftpos = low;
-	int rightpos = mid + 1;
-
-	while (leftpos <= mid && rightpos <= high)
+	while (lpos <= lend && rpos <= rend)
 	{
-		if (pr[leftpos].price < pr[rightpos].price)
-			tempArr[mergepos++] = pr[leftpos++];
-		else
-			tempArr[mergepos++] = pr[rightpos++];
-	}
-	while (leftpos <= mid)
-	{
-		tempArr[mergepos++] = pr[leftpos++];
-	}
-	while (rightpos <= high)
-	{
-		tempArr[mergepos++] = pr[rightpos++];
-	}
-	//for (int i = 0; i < totalRows; i++, high--)
-	//{
-	//	pr[high] = tempArr[high];
-	//}
-	assert(mergepos == size);
+		double leftPrice = stod(pr[lpos].price);
+		double rightPrice = stod(pr[rpos].price);
 
-	for (mergepos = 0; mergepos < size; ++mergepos)
-	{
-		pr[low + mergepos] = tempArr[mergepos];
+		if (leftPrice <= rightPrice) {
+			tempArr[tempPos++] = pr[lpos++];
+		}
+		else {
+			tempArr[tempPos++] = pr[rpos++];
+		}
+
+		while (lpos <= lend)
+		{
+			tempArr[tempPos++] = pr[lpos++];
+		}
+		while (rpos <= rend)
+		{
+			tempArr[tempPos++] = pr[rpos++];
+		}
+		for (int i = 0; i < numElements; i++)
+		{
+			pr[rend] = tempArr[rend];
+			rend--;
+		}
 	}
-	free(tempArr);
+
 }
 
-void MergeSort(Products* pr, int low, int high)
+void MergeSort(Products* pr, int left, int right)
 {
-	cout << "Hello Inside Merge Sort" << endl;
+	int mid;
 
-	//int mid;
-
-	//if (left < right)
-	//{
-	//	mid = (left + right) / 2;
-
-	//	// Recursive Function
-	//	MergeSort(pr, left, mid);
-	//	MergeSort(pr, mid + 1, right);
-	//	cout << "Hello Going to Merge" << endl;
-	//	Merge(pr, left, mid + 1, right); 
-
-	//}
-	if (low < high)
+	if (left < right)
 	{
-		int mid = (low + high) / 2;
-		cout << pr;
-		MergeSort(pr, low, mid);
-		MergeSort(pr, mid + 1, high);
-		Merge(pr, low, mid, high);
+		mid = (left + right) / 2;
+
+		// Recursive Function
+		MergeSort(pr, left, mid);
+		MergeSort(pr, mid + 1, right);
+		Merge(pr, left, mid + 1, right); 
+
 	}
 }
 
@@ -215,7 +163,6 @@ void PrintProducts(Products* pr)
 	}
 
 }
-
 void MergeSorting()
 {
 	Products* pr;
