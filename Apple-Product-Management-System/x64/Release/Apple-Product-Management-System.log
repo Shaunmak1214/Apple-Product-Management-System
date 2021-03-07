@@ -29,8 +29,18 @@ D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-Syst
 D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-System-cloned\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(622,6): warning C4101: 'qState': unreferenced local variable
 D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-System-cloned\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(620,12): warning C4101: 'row': unreferenced local variable
   Generating code
+<<<<<<< HEAD
   1 of 231 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
+=======
+<<<<<<< Updated upstream
+  2 of 231 functions ( 0.9%) were compiled, the rest were copied from previous compilation.
+>>>>>>> bdd0253740620bfa9aecd1a0e2a8f75d8384bee7
     0 functions were new in current compilation
     1 functions had inline decision re-evaluated but remain unchanged
+=======
+  6 of 232 functions ( 2.6%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    8 functions had inline decision re-evaluated but remain unchanged
+>>>>>>> Stashed changes
   Finished generating code
   Apple-Product-Management-System.vcxproj -> D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-System-cloned\Apple-Product-Management-System\x64\Release\Apple-Product-Management-System.exe
