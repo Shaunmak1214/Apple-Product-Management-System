@@ -23,7 +23,6 @@ int getTotal() {
 
 	if (conn)
 	{
-		puts("Total Successful connection to database !!! ");
 
 		string query = "SELECT * FROM products";
 		const char* q = query.c_str();
@@ -32,7 +31,7 @@ int getTotal() {
 		{
 			res = mysql_store_result(conn);
 			numRows = mysql_num_rows(res);
-			cout << "Total NumRows = " << numRows << endl;
+
 			return numRows;
 			mysql_close(conn);
 		}

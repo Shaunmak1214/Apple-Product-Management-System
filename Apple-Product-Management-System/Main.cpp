@@ -5,6 +5,7 @@
 #include "Sort-Insertion.h"
 #include "Sort-Selection.h"
 #include "Sort-Merge.h"
+#include "Hashing.h "
 #include <mysql.h>
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -15,15 +16,15 @@
 void storeAllList();
 void storeIdList();
 void storeNameList();
-void insert(string name, string category, string price, string colors);
-void update(string id, string name, string category, string price, string colors);
-int menu();
+void insert();
+void update();
+int  menu();
 void display();
-void add();
-void edit();
+//void add();
 void deleteProduct();
 void search();
 int int_to_str(int a, int b);
+
 
 using namespace std;
 int qstate;
@@ -222,51 +223,6 @@ void insert(string name, string category, string price, string colors) {
 		}
 
 	}
-
-}
-
-void update(string id, string name, string category, string price, string colors) {
-
-	MYSQL* conn;
-	MYSQL_ROW row;
-	MYSQL_RES* res;
-	int qState;
-	conn = initConnection();
-
-	if (conn) {
-
-		string updateQ = "UPDATE products SET `product_name` = ";
-		updateQ += "'" + name + "' ";
-		updateQ += ",";
-		updateQ += " `product_category` = ";
-		updateQ += "'" + category + "' ";
-		updateQ += ",";
-		updateQ += " `product_price` = ";
-		updateQ += "'" + price + "' ";
-		updateQ += ",";
-		updateQ += " `product_colors` = ";
-		updateQ += "'" + colors + "' ";
-		updateQ += "WHERE `product_id` = '" + id;
-		updateQ += "';";
-
-		cout << updateQ << endl;
-
-		const char* q = updateQ.c_str();
-		qState = mysql_query(conn, q);
-
-		if (!qState) {
-
-			cout << "Update Successfully" << endl;
-
-		}
-		else {
-
-			cout << "Update Failed" << endl;
-
-		}
-
-	}
-
 }
 
 int main()
@@ -341,8 +297,8 @@ int menu()
 	{
 	case 1: display(); break;
 	case 2: search(); break;
-	case 3: add(); break;
-	case 4: edit(); break;
+	case 3: insert(); break;
+	case 4: update(); break;
 	case 5: deleteProduct(); break;
 	case 0: exit(0); break;
 	default: cout << "Invalid choice." << endl; exit(1); break;
@@ -400,6 +356,7 @@ void search()
 	cout << "|-----------------------------------------------------|" << endl;
 	cout << "|           Search by product ID          1           |" << endl;
 	cout << "|           Search by product name        2           |" << endl;
+	cout << "|           Search by product Code        3           |" << endl;
 	cout << "|-----------------------------------------------------|" << endl;
 	cout << "|           BACK                          9           |" << endl;
 	cout << "|           EXIT                          0           |" << endl;
@@ -419,72 +376,10 @@ void search()
 	{
 	case 1: storeIdList(); searchId(); break;
 	case 2: searchName(); break;
+	case 3: searchCode(); break;
 	case 9: action = menu(); break;
 	case 0: exit(0); break;
 	default: cout << "Invalid choice." << endl; exit(1); break;
-	}
-}
-
-void add()
-{
-	//insert("Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");
-	//insert("10","PH102", "iPhone 12", "iPhone", "3399.00", "Black, White, Red, Green, Blue");
-	string name, category, color;
-	double price;
-
-	cout << endl;
-	cout << "+---------------------------------------------------+" << endl;
-	cout << "                     ADD PRODUCT                     " << endl;
-	cout << "+---------------------------------------------------+" << endl;
-	cout << "Please fill in the product details  below" << endl << endl;
-	cout << "Product name     : ";
-	getline(cin, name);
-	cin.ignore();
-	cout << "Product category : ";
-	getline(cin, category);
-	cin.ignore();
-	cout << "Product price    : "; //Infinity loop?
-	cin >> price;
-	cout << "Product color    : ";
-	getline(cin, color);
-	cin.ignore();
-
-	cout << name << category << price << color; //Test output
-
-	
-	
-}
-
-void edit()
-{
-	//update("1", "Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");
-}
-
-void deleteProduct()
-{
-	MYSQL* conn;
-	MYSQL_ROW row;
-	MYSQL_RES* res;
-	int qState;
-	conn = initConnection();
-
-	string prodId;
-	cout << "Enter product ID to delete: ";
-	cin >> prodId;
-
-	string query = "select * from products where product_id = '" + prodId + "'";
-	const char* q = query.c_str();
-	qstate = mysql_query(conn, q);
-	res = mysql_store_result(conn);
-	int count = mysql_num_fields(res);
-	if (!qstate)
-	{
-		string query1 = "delete from products where product_id = '" + prodId + "'";
-		const char* q = query1.c_str();
-		qstate = mysql_query(conn, q);
-		//res = mysql_store_result(conn);
-		//int count = mysql_num_fields(res);
-		cout << prodId << "Record Found! Deleted";
 	}
 }
 
@@ -505,4 +400,179 @@ int int_to_str(int a, int b)
 
 	// return the formed integer 
 	return combine;
+}
+
+void insert()
+{
+	string name, category, colors, price;
+	int code, preID, id;
+
+	cout << endl;
+	cout << "+---------------------------------------------------+" << endl;
+	cout << "                     ADD PRODUCT                     " << endl;
+	cout << "+---------------------------------------------------+" << endl;
+	cout << "Please fill in the product details  below" << endl << endl;
+	cout << "Product name     : ";
+	cin.ignore();
+	getline(cin, name);
+	cout << "Product category : ";
+	//cin.ignore();
+	getline(cin, category);
+	cout << "Product Price : ";
+	//cin.ignore();
+	getline(cin, price);
+	cout << "Product color    : ";
+	//cin.ignore();
+	getline(cin, colors);
+
+
+	// get unique ID
+	srand(time(NULL));
+	if (category == "Accessories") {
+		code = 101;
+		preID = (rand() % 50000) + 1;
+		id = int_to_str(code, preID);
+
+	}
+	else if (category == "Laptop") {
+		code = 202;
+		preID = (rand() % 50000) + 1;
+		id = int_to_str(code, preID);
+	}
+	else if (category == "Phone") {
+		code = 303;
+		preID = (rand() % 50000) + 1;
+		id = int_to_str(code, preID);
+	}
+	else if (category == "Watch") {
+		code = 404;
+		preID = (rand() % 50000) + 1;
+		id = int_to_str(code, preID);
+	}
+	else if (category == "Tablet") {
+		code = 505;
+		preID = (rand() % 50000) + 1;
+		id = int_to_str(code, preID);
+	}
+	else {
+		code = 909;
+		preID = (rand() % 50000) + 1;
+		id = int_to_str(code, preID);
+	}
+
+	// Convert id back to string
+	string strid = to_string(id);
+
+	cout << name << category << price << colors << endl;; //Test output
+
+	MYSQL* conn;
+	MYSQL_ROW row;
+	MYSQL_RES* res;
+	int qState;
+	conn = initConnection();
+
+	if (conn) {
+
+		string insertQ = "INSERT INTO products (`id`, `product_name`, `product_category`, `product_price`, `product_colors`) VALUES ( '" + strid + "', '" + name + "', '" + category + "', '" + price  + "', '" + colors + "');";
+
+		/*string insertQ = "INSERT INTO products (`id`, `product_name`, `product_category`, `product_price`, `product_colors`) VALUES ( ' ";
+		insertQ += strid;
+		insertQ += "', '";
+		insertQ += name;
+		insertQ += "', '";
+		insertQ += category;
+		insertQ += "', '";
+		insertQ += price;
+		insertQ += "', '";
+		insertQ += colors;
+		insertQ += "' );";*/
+
+		cout << insertQ << endl;
+
+		const char* q = insertQ.c_str();
+		qState = mysql_query(conn, q);
+
+		if (!qState) {
+
+			cout << "Insert Successfully" << endl;
+
+		}
+		else {
+
+			cout << "Insert Failed" << endl;
+
+		}
+
+	}
+}
+
+void update() 
+{
+	string name, category, color, price;
+
+	cout << endl;
+	cout << "+---------------------------------------------------+" << endl;
+	cout << "                     EDIT PRODUCT                    " << endl;
+	cout << "+---------------------------------------------------+" << endl;
+	cout << "Please fill in the product details  below" << endl << endl;
+
+	cout << "Product name     : ";
+	getline(cin, name);
+	cin.ignore();
+	cout << "Product category : ";
+	getline(cin, category);
+	cin.ignore();
+	cout << "Product Price : ";
+	getline(cin, price);
+	cin.ignore();
+	cout << "Product color    : ";
+	getline(cin, color);
+	cin.ignore();
+
+	MYSQL* conn;
+	MYSQL_ROW row;
+	MYSQL_RES* res;
+	int qState;
+	conn = initConnection();
+
+	if (conn) {
+
+		string updateQ = "UPDATE products SET `product_name` = ";
+		updateQ += "'" + name + "' ";
+		updateQ += ",";
+		updateQ += " `product_category` = ";
+		updateQ += "'" + category + "' ";
+		updateQ += ",";
+		updateQ += " `product_price` = ";
+		updateQ += "'" + price + "' ";
+		updateQ += ",";
+		updateQ += " `product_colors` = ";
+		updateQ += "'" + color + "' ";
+		//updateQ += "WHERE `product_id` = '" + id;
+		updateQ += "';";
+
+		cout << updateQ << endl;
+
+		const char* q = updateQ.c_str();
+		qState = mysql_query(conn, q);
+
+		if (!qState) {
+
+			cout << "Update Successfully" << endl;
+
+		}
+		else {
+
+			cout << "Update Failed" << endl;
+
+		}
+
+	}
+
+}
+
+void deleteProduct()
+{
+
+
 }
