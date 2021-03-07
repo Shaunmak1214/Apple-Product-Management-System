@@ -582,22 +582,3 @@ void deleteProduct()
 		cout << prodId << "Record Found! Deleted";
 	}
 }
-
-int int_to_str(int a, int b)
-{
-	// Convert both the integers to string 
-	string s1 = to_string(a);
-	string s2 = to_string(b);
-
-	// Concatenate both strings 
-	string s = s1 + s2;
-
-	// Convert the concatenated string 
-	// to integer 
-	int combine = stoi(s);
-
-	cout << combine << endl;
-
-	// return the formed integer 
-	return combine;
-}

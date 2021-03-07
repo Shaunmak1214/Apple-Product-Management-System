@@ -200,6 +200,8 @@ int MergeSorting()
 	pr = new (nothrow) Products[totalRows];
 	pr = getProductDetails();
 
+	//cout << "cout for pr" << pr << endl;
+
 	MergeSort(pr, 0, totalRows - 1);
 	cout << "Hello After Merge Sort" << endl;
 
