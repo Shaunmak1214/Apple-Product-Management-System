@@ -92,13 +92,21 @@ Products* getProductDetails()
 	return 0;
 }
 
+<<<<<<< Updated upstream
 // Merge Function
+=======
+>>>>>>> Stashed changes
 void Merge(Products pr[], int lpos, int rpos, int rend)
 {
 	int lend, numElements, tempPos;
 
+<<<<<<< Updated upstream
 	/* create temp array */
 	Products* tempArr = new (nothrow) Products[totalRows];
+=======
+	Products* tempArr = new (nothrow) Products[totalRows];
+	//tempArr = new (nothrow) Products[totalRows];
+>>>>>>> Stashed changes
 
 	lend = rpos - 1;
 	tempPos = lpos;
@@ -110,6 +118,10 @@ void Merge(Products pr[], int lpos, int rpos, int rend)
 		int rightPrice = stoi(pr[rpos].price);
 	
 		if (leftPrice > rightPrice) {
+<<<<<<< Updated upstream
+=======
+		//if (pr[lpos].price < pr[rpos].price) {
+>>>>>>> Stashed changes
 			tempArr[tempPos++] = pr[lpos++];
 		}
 		else {
@@ -127,20 +139,34 @@ void Merge(Products pr[], int lpos, int rpos, int rend)
 		{
 			tempArr[tempPos++] = pr[rpos++];
 		}
+<<<<<<< Updated upstream
 
 		/* Copy the temp array to original array */
+=======
+>>>>>>> Stashed changes
 		for (int i = 0; i < numElements; i++, rend--)
 		{
 			pr[rend] = tempArr[rend];
 		}
+<<<<<<< Updated upstream
 
+=======
+		for (int i = 0; i < numElements; i++)
+		{
+			cout << pr[i].price << " ";
+		}
+		cout << endl;
+>>>>>>> Stashed changes
 	}
 
 }
 
+<<<<<<< Updated upstream
 // Merge Sort Function
 // `left` is for left index and `right` is right index of the
 // sub-array of pr to be sorted 
+=======
+>>>>>>> Stashed changes
 void MergeSort(Products pr[], int left, int right)
 {
 	int mid;
@@ -157,7 +183,10 @@ void MergeSort(Products pr[], int left, int right)
 	}
 }
 
+<<<<<<< Updated upstream
 // Display Sorted Products
+=======
+>>>>>>> Stashed changes
 void PrintProducts(Products pr[])
 {
 	cout << endl;
