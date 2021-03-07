@@ -86,12 +86,12 @@ Products* getProductDetails()
 	return 0;
 }
 
-void Merge(Products* pr, int lpos, int rpos, int rend)
+void Merge(Products pr[], int lpos, int rpos, int rend)
 {
 	int lend, numElements, tempPos;
 
-	Products* tempArr;
-	tempArr = new (nothrow) Products[totalRows];
+	Products* tempArr = new (nothrow) Products[totalRows];
+	//tempArr = new (nothrow) Products[totalRows];
 
 	lend = rpos - 1;
 	tempPos = lpos;
@@ -99,10 +99,11 @@ void Merge(Products* pr, int lpos, int rpos, int rend)
 
 	while (lpos <= lend && rpos <= rend)
 	{
-		double leftPrice = stod(pr[lpos].price);
-		double rightPrice = stod(pr[rpos].price);
-
-		if (leftPrice <= rightPrice) {
+		int leftPrice = stoi(pr[lpos].price);
+		int rightPrice = stoi(pr[rpos].price);
+	
+		if (leftPrice > rightPrice) {
+		//if (pr[lpos].price < pr[rpos].price) {
 			tempArr[tempPos++] = pr[lpos++];
 		}
 		else {
@@ -117,16 +118,20 @@ void Merge(Products* pr, int lpos, int rpos, int rend)
 		{
 			tempArr[tempPos++] = pr[rpos++];
 		}
-		for (int i = 0; i < numElements; i++)
+		for (int i = 0; i < numElements; i++, rend--)
 		{
 			pr[rend] = tempArr[rend];
-			rend--;
 		}
+		for (int i = 0; i < numElements; i++)
+		{
+			cout << pr[i].price << " ";
+		}
+		cout << endl;
 	}
 
 }
 
-void MergeSort(Products* pr, int left, int right)
+void MergeSort(Products pr[], int left, int right)
 {
 	int mid;
 
@@ -142,7 +147,7 @@ void MergeSort(Products* pr, int left, int right)
 	}
 }
 
-void PrintProducts(Products* pr)
+void PrintProducts(Products pr[])
 {
 	cout << endl;
 	cout << "\t";
