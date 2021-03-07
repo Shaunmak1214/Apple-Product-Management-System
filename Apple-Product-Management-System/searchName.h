@@ -6,6 +6,7 @@
 #include <string> 
 #include <cstdlib> 
 #include <ctype.h>
+#include <iomanip>
 
 using namespace std;
 
@@ -24,13 +25,23 @@ void searchName()
 	linkedList nameList;
 	linkedList smallNameList;
 
-	cout << "SEARCH PRODUCT" << endl;
-	cout << "Enter the name of product: ";
+	cout << endl;
+	cout << "\t";
+	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
+	cout << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                   SEARCH PRODUCT				" << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
+	cout << endl;
+	
+	cout << "\t\tEnter the name of product: ";
 	getline(cin, prodName);
 	cin.ignore();
 
 	found = converSearchName(prodName, &namehead, &smallnamehead);
-	cout << "Found: " << found;
+	cout << "\t\tFound: " << found;
 }
 
 int converSearchName(string prodName, Node** name, Node** smallname)

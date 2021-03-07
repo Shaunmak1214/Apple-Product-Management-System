@@ -76,16 +76,25 @@ public:
 void searchId()
 {
 	linkedList idList;
+	linkedList list;
 
+	Node* node;
 	int prodId;
 	int count;
 	int found;
 
 	cout << endl;
-	cout << "+---------------------------------------------------+" << endl;
-	cout << "                   SEARCH PRODUCT                    " << endl;
-	cout << "+---------------------------------------------------+" << endl;
-	cout << "Enter the product ID: ";
+	cout << "\t";
+	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
+	cout << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                  SEARCH PRODUCT				" << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
+	cout << endl;
+
+	cout << "\t\tEnter the product ID: ";
 	cin >> prodId;
 
 	storeIntId(idhead);
@@ -93,11 +102,13 @@ void searchId()
 	printList(intidhead); //Test output
 
 	count = getCount(intidhead);
-	cout << "Count: " << count;
+	cout << "\t\tCount: " << count;
 
 	idNode* head = binarySearch(intidhead, prodId);
-	cout << endl <<  "Data: " << head->data;
+	cout << endl <<  "\t\tData: " << head->data;
+	found = head->data;
 
+	//list.printNthList(,found, count);
 	//idList.printList(idhead);
 }
 

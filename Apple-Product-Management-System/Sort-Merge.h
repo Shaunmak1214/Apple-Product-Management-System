@@ -8,6 +8,7 @@
 #include<iostream>
 #include<iomanip>
 #include <mysql.h>
+#include <assert.h>
 #include "db.h"
 #include "product.h"
 
@@ -140,20 +141,30 @@ void Merge(Products* pr, int low, int mid, int high)
 
 	while (leftpos <= mid && rightpos <= high)
 	{
-		if (&pr[leftpos].price < &pr[rightpos].price)
+		if (pr[leftpos].price < pr[rightpos].price)
 			tempArr[mergepos++] = pr[leftpos++];
 		else
 			tempArr[mergepos++] = pr[rightpos++];
 	}
-	while (leftpos <= low)
-		while (rightpos <= high)
-		{
-			tempArr[mergepos++] = pr[rightpos++];
-		}
-	for (int i = 0; i < totalRows; i++, high--)
+	while (leftpos <= mid)
 	{
-		pr[high] = tempArr[high];
+		tempArr[mergepos++] = pr[leftpos++];
 	}
+	while (rightpos <= high)
+	{
+		tempArr[mergepos++] = pr[rightpos++];
+	}
+	//for (int i = 0; i < totalRows; i++, high--)
+	//{
+	//	pr[high] = tempArr[high];
+	//}
+	assert(mergepos == size);
+
+	for (mergepos = 0; mergepos < size; ++mergepos)
+	{
+		pr[low + mergepos] = tempArr[mergepos];
+	}
+	free(tempArr);
 }
 
 void MergeSort(Products* pr, int low, int high)
@@ -176,7 +187,7 @@ void MergeSort(Products* pr, int low, int high)
 	if (low < high)
 	{
 		int mid = (low + high) / 2;
-
+		cout << pr;
 		MergeSort(pr, low, mid);
 		MergeSort(pr, mid + 1, high);
 		Merge(pr, low, mid, high);
@@ -185,7 +196,17 @@ void MergeSort(Products* pr, int low, int high)
 
 void PrintProducts(Products* pr)
 {
-	cout << "Products sorted by price : " << endl;
+	cout << endl;
+	cout << "\t";
+	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
+	cout << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "         PRODUCT SORTED BY NAME		" << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
+	cout << endl;
+
 	cout << setw(5) << left << "no" << setw(5) << "id" << setw(8) << "code" << setw(30) << "name" << setw(15) << "category" << setw(10) << "price" << setw(25) << "colors" << endl;
 
 	for (int i = 0; i < totalRows; i++)
@@ -194,16 +215,16 @@ void PrintProducts(Products* pr)
 	}
 
 }
-int MergeSorting()
+
+void MergeSorting()
 {
 	Products* pr;
 	pr = new (nothrow) Products[totalRows];
 	pr = getProductDetails();
 
+	cout << pr[total].price << endl;
 	MergeSort(pr, 0, totalRows - 1);
-	cout << "Hello After Merge Sort" << endl;
 
 	PrintProducts(pr);
 
-	return 0;
 }

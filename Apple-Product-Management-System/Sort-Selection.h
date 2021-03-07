@@ -101,7 +101,7 @@ int selectMin(Details pd[], int position)
 	return index;
 }
 
-int SelectSort()
+void SelectSort()
 {
 	Details* pd, current;
 	pd = new (nothrow) Details[Rows];
@@ -123,7 +123,17 @@ int SelectSort()
 		}
 	}
 
-	cout << "Product Sorted By Category : " << endl;
+	cout << endl;
+	cout << "\t";
+	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
+	cout << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "         PRODUCT SORTED BY CATEGORY			" << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
+	cout << endl;
+	
 	cout << setw(5) << left << "No" << setw(5) << "Id" << setw(8) << "Code" << setw(30) << "Name" << setw(15) << "Category" << setw(10) << "Price" << setw(25) << "Colors" << endl;
 
 	for (int i = 0; i < Rows; i++)
@@ -131,5 +141,4 @@ int SelectSort()
 		cout << setw(5) << i + 1 << setw(5) << pd[i].id << setw(8) << pd[i].code << setw(30) << pd[i].name << setw(15) << pd[i].category << setw(10) << pd[i].price << setw(25) << pd[i].color << endl;
 	}
 
-	return 0;
 }
