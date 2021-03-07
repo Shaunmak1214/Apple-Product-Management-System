@@ -11,18 +11,18 @@ void searchId();
 void storeIntId(Node* idhead);
 void bubbleSort(struct idNode** intidhead);
 struct idNode* swap(struct idNode* ptr1, struct idNode* ptr2);
-//void printList(struct idNode* intidhead); //Test linked list output
 int getCount(idNode* intidhead);
 struct idNode* binarySearch(idNode* intidhead, int prodId);
 struct idNode* middle(idNode* first, idNode* last);
 
+//New linked list for int data
 struct idNode {
 
 	int data;
 	idNode* next;
 
 };
-
+//To store a list of int product ID
 idNode* intidhead;
 
 class intLinkedList {
@@ -30,6 +30,7 @@ class intLinkedList {
 public:
 	int data;
 
+	//Append product ID into linked list
 	void append(idNode** head_ref, int new_data)
 	{
 
@@ -54,6 +55,7 @@ public:
 		return;
 	}
 
+	//Print out the list of product ID
 	void printList(idNode* node)
 	{
 		int counter = 1;
@@ -73,8 +75,10 @@ public:
 	}
 };
 
+//Search product ID (apply bubble sort and binary search)
 void searchId()
 {
+	//Call linked list with object
 	linkedList idList;
 	linkedList list;
 
@@ -83,6 +87,7 @@ void searchId()
 	int count;
 	int found;
 
+	//Search product menu
 	cout << endl;
 	cout << "\t";
 	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
@@ -97,16 +102,20 @@ void searchId()
 	cout << "\t\tEnter the product ID: ";
 	cin >> prodId;
 
+	//Call store product ID function for linked list
 	storeIntId(idhead);
+
+	//Bubble sort function
 	bubbleSort(&intidhead);
-	//printList(intidhead); //Test linked list output
 
+	//Get total elements of linked list 
 	count = getCount(intidhead);
-	//cout << "\t\tCount: " << count; //Test linked list total count
 
+	//Assign binary search result into linked list head
 	idNode* head = binarySearch(intidhead, prodId);
 	found = head->data;
 
+	//Display finding result
 	if (found == -1)
 	{
 		cout << endl << "\t\tProduct not found!" << endl;
@@ -118,6 +127,7 @@ void searchId()
 
 }
 
+//Pass string ID linked list and store into int ID linked list
 void storeIntId(Node* idhead)
 {
 	intLinkedList intIdList;
@@ -126,13 +136,14 @@ void storeIntId(Node* idhead)
 
 	while (idhead != NULL)
 	{
+		//Convert string product ID to int
 		convertedId = stoi(idhead->data);
 		idhead = idhead->next;
 		intIdList.append(&intidhead, convertedId);
 	}
-	//intIdList.printList(intidhead); //Test output
 }
 
+//Bubble sort to sort product ID
 void bubbleSort(struct idNode** intidhead)
 {
 	struct idNode** h;
@@ -168,6 +179,7 @@ void bubbleSort(struct idNode** intidhead)
 	}
 }
 
+//Swap the pointers which get from linked list 
 struct idNode* swap(struct idNode* ptr1, struct idNode* ptr2)
 {
 	struct idNode* temp = ptr2->next;
@@ -175,17 +187,8 @@ struct idNode* swap(struct idNode* ptr1, struct idNode* ptr2)
 	ptr1->next = temp;
 	return ptr2;
 }
-////////Test bubble source output
-/*void printList(struct idNode* intidhead) //Test output
-{
-	while (intidhead != NULL)
-	{
-		cout << intidhead->data << " -> ";
-		intidhead = intidhead->next;
-	}
-	cout << endl;
-}*/
 
+//Get the total elements of linked list
 int getCount(idNode* intidhead)
 {
 	int count = 0; // Initialize count  
@@ -198,7 +201,7 @@ int getCount(idNode* intidhead)
 	return count;
 }
 
-//int binarySearch(idNode* intidhead, int count, int prodId)
+//Binary search to search the product ID in linked list
 struct idNode* binarySearch(idNode* intidhead, int prodId)
 {
 	struct idNode* first = intidhead;
@@ -232,6 +235,7 @@ struct idNode* binarySearch(idNode* intidhead, int prodId)
 	return NULL;
 }
 
+//A function to find the middle point of linked list
 struct idNode* middle(idNode* first, idNode* last)
 {
 	if (first == NULL)

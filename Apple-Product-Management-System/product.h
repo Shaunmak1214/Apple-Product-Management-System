@@ -9,6 +9,7 @@
 
 using namespace std;
 
+// get the total row from the database
 int getTotal() {
 
 	MYSQL* conn;
@@ -32,7 +33,8 @@ int getTotal() {
 			res = mysql_store_result(conn);
 			numRows = mysql_num_rows(res);
 
-			return numRows;
+			return numRows;		// return total rows
+
 			mysql_close(conn);
 		}
 		else

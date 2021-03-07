@@ -2,8 +2,10 @@
 #include <iostream>
 #include <string>
 
+//setting default namespace to use std
 using namespace std;
 
+//node structure for linkedlist
 struct Node {
 
 	string data;
@@ -11,15 +13,18 @@ struct Node {
 
 };
 
+//Variable Initializing
 Node* head;
 Node* idhead;
 Node* namehead;
 Node* smallnamehead;
 
+//linkedlist class
 class linkedList {
 
 public:
 
+	//append new node to linkedlist
 	void append(Node** head_ref, string new_data)
 	{
 
@@ -44,6 +49,7 @@ public:
 		return;
 	}
 
+	//print all the nodes in linkedlist
 	void printList(Node* node)
 	{
 		int counter = 1;

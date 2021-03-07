@@ -47,5 +47,8 @@
     <ClInclude Include="product.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Hashing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -10,12 +10,15 @@ int hashing(int code);
 
 void searchCode()
 {
+	// variables declaration
 	int hashedCode;
 	int productCode;
+	int qstate1;
+
+	// database connection
 	MYSQL* conn;
 	MYSQL_ROW row;
 	MYSQL_RES* res;
-	int qstate1;
 
 	cout << endl;
 	cout << "+---------------------------------------------------+" << endl;
@@ -29,8 +32,11 @@ void searchCode()
 	cout << "\t 5. Accessories		-------------------  505	  " << endl;
 	cout << "\t 6. Others		-------------------  909	  "		<< endl;
 	cout << "+---------------------------------------------------+" << endl << endl;
+
+	// Prompt user enter input
 	cout << "Enter the product code: ";
 	cin >> hashedCode;
+
 
 	conn = initConnection();
 
@@ -45,12 +51,12 @@ void searchCode()
 			int numfields = mysql_num_fields(res);
 			int i = 0;
 
-			//cout << row[2] << endl;
 			cout << "Product Hashed by Key Entered : " << endl;
 			cout << setw(4) << left << "No" << setw(15) << "Id" << setw(30) << "Name" << setw(15) << "Category" << setw(10) << "Price" << setw(25) << "Colors" << endl;
 
 			while (row = mysql_fetch_row(res))
 			{
+				// compare the hashed id from databse with user's input
 				int comparedHash = hashing(stoi(row[1]));
 				if (comparedHash == hashedCode) {
 
@@ -75,10 +81,12 @@ void searchCode()
 
 }
 
+// Hashing Function
 int hashing(int code)
 {
 	int hashCode;
 	hashCode = code / 100000;
 
+	//returning hashedcode
 	return hashCode;
 }

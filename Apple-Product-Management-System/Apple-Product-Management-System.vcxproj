@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="db.h" />
+    <ClInclude Include="Hashing.h" />
     <ClInclude Include="searchId.h" />
     <ClInclude Include="searchName.h" />
     <ClInclude Include="Sort-Merge.h" />

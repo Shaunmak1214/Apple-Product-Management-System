@@ -8,16 +8,19 @@
 #include <ctype.h>
 #include <iomanip>
 
+//set the default namespace to std
 using namespace std;
 
 //const int SIZE = 10;
 //int qstate;
 
+//function prototype
 void searchName();
 int converSearchName(string, Node** name, Node** smallname);
 string convertToLower(string name);
 int linearSearch(string, Node* head);
 
+//function to search product name
 void searchName()
 {
 	int found;
@@ -52,6 +55,7 @@ void searchName()
 	}
 }
 
+//appending to linkedlist
 int converSearchName(string prodName, Node** name, Node** smallname)
 {
 	linkedList smallNameList;
@@ -74,6 +78,7 @@ int converSearchName(string prodName, Node** name, Node** smallname)
 	return found;
 }
 
+//converting string to all lovercase
 string convertToLower(string str)
 {
 	for (int i = 0;i < str.length();i++)
@@ -87,6 +92,9 @@ string convertToLower(string str)
 	}
 	return str;
 }
+
+// linear search function to search product name
+
 
 int linearSearch(string productName, Node* head)
 {
