@@ -6,6 +6,7 @@
 #include <string> 
 #include <cstdlib> 
 #include <ctype.h>
+#include <iomanip>
 
 using namespace std;
 
@@ -24,13 +25,31 @@ void searchName()
 	linkedList nameList;
 	linkedList smallNameList;
 
-	cout << "SEARCH PRODUCT" << endl;
-	cout << "Enter the name of product: ";
-	getline(cin, prodName);
+	cout << endl;
+	cout << "\t";
+	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
+	cout << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(21) << "                      SEARCH PRODUCT			   " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
+	cout << endl;
+	
+	cout << "\t\tEnter the name of product: ";
 	cin.ignore();
+	getline(cin, prodName);
 
 	found = converSearchName(prodName, &namehead, &smallnamehead);
-	cout << "Found: " << found;
+
+	if (found == -1)
+	{
+		cout << endl << "\t\tProduct not found!" << endl;
+	}
+	else
+	{
+		cout << endl << "\t\tProduct found! Product ID is " << found << "." << endl;
+	}
 }
 
 int converSearchName(string prodName, Node** name, Node** smallname)
@@ -47,8 +66,8 @@ int converSearchName(string prodName, Node** name, Node** smallname)
 		head = head->next;
 		smallNameList.append(&smallnamehead, node->data);
 	}
-	cout << productName;
-	smallNameList.printList(smallnamehead);
+	//cout << productName; //Test converted product name output
+	//smallNameList.printList(smallnamehead); //Test the name that convert to small cases
 
 	found = linearSearch(productName, smallnamehead);
 

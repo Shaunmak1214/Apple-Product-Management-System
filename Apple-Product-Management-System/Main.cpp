@@ -11,7 +11,10 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
+#include <iomanip>
 #include <string>
+
+using namespace std;
 
 void storeAllList();
 void storeIdList();
@@ -24,9 +27,10 @@ void display();
 void deleteProduct();
 void search();
 int int_to_str(int a, int b);
+void InsertSort();
+void SelectSort();
+void MergeSort();
 
-
-using namespace std;
 int qstate;
 int columnQState;
 
@@ -93,12 +97,12 @@ void storeAllList() {
 		}
 		else
 		{
-			cout << "Query failed: " << mysql_error(conn) << endl;
+			cout << "\t\tQuery failed: " << mysql_error(conn) << endl;
 		}
 	}
 	else
 	{
-		puts("Connection to database has failed!");
+		puts("\t\tConnection to database has failed!");
 	}
 
 }
@@ -136,12 +140,12 @@ void storeIdList()
 		}
 		else
 		{
-			cout << "Query failed: " << mysql_error(conn) << endl;
+			cout << "\t\tQuery failed: " << mysql_error(conn) << endl;
 		}
 	}
 	else
 	{
-		puts("Connection to database has failed!");
+		puts("\t\tConnection to database has failed!");
 	}
 }
 
@@ -172,18 +176,18 @@ void storeNameList()
 			while (row = mysql_fetch_row(res))
 			{
 				name = "";
-				name += row[1];
+				name += row[2];
 				nameList.append(&namehead, name);
 			}
 		}
 		else
 		{
-			cout << "Query failed: " << mysql_error(conn) << endl;
+			cout << "\t\tQuery failed: " << mysql_error(conn) << endl;
 		}
 	}
 	else
 	{
-		puts("Connection to database has failed!");
+		puts("\t\tConnection to database has failed!");
 	}
 }
 
@@ -213,12 +217,12 @@ void insert(string name, string category, string price, string colors) {
 
 		if (!qState) {
 
-			cout << "Insert Successfully" << endl;
+			cout << "\t\tInsert Successfully" << endl;
 
 		}
 		else {
 
-			cout << "Insert Failed" << endl;
+			cout << "\t\tInsert Failed" << endl;
 
 		}
 
@@ -242,10 +246,15 @@ int main()
 	storeNameList();
 	//nameList.printList(namehead); //Test output
 
-	cout << "+*********************************************************+" << endl;
-	cout << "|                                                         |" << endl;
-	cout << "|       WELCOME TO APPLE PRODUCT MANAGEMENT SYSTEM!       |" << endl;
-	cout << "|                                                         |" << endl;
+	cout << "\t";
+	for (int i = 0; i < 60; i++) { cout << (char)219; }
+	cout << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "       WELCOME TO APPLE PRODUCT MANAGEMENT SYSTEM!       " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 60; i++) { cout << (char)219; }
+	cout << endl;
 
 	do
 	{
@@ -270,26 +279,39 @@ int menu()
 {
 	int action;
 
-	cout << "+=========================================================+" << endl;
-	cout << "|                          MENU                           |" << endl;
-	cout << "|=========================================================|" << endl;
-	cout << "|             Display product              1              |" << endl;
-	cout << "|             Search product               2              |" << endl;
-	cout << "|             Add product                  3              |" << endl;
-	cout << "|             Edit product                 4              |" << endl;
-	cout << "|             Delete product               5              |" << endl;
-	cout << "|=========================================================|" << endl;
-	//cout << "|             BACK                         9              |" << endl; //use on other menu
-	cout << "|             EXIT                         0              |" << endl;
-	cout << "+.........................................................+" << endl;
-	cout << "Please choose an action above: ";
+cout << endl;
+	cout << "\t";
+	for (int i = 0; i < 60; i++) { cout << (char)219; }
+	cout << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                          MENU                           " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 60; i++) { cout << (char)219; }
+	cout << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "             Display product              1              " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "             Search product               2              " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "             Add product                  3              " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "             Edit product                 4              " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "             Delete product               5              " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 60; i++) { cout << (char)223; }
+	cout << endl;
+	cout << "\t" << (char)219 << setw(58) << "             EXIT                         0              " << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
+	cout << endl;	
+
+	cout << "\t\tPlease choose an action above: ";
 	cin >> action;
 	cout << endl;
 
 	while (action != 1 && action != 2 && action != 3 && action != 4 && action != 5 && action != 9 && action != 0)
 	{
-		cout << "Invalid choice." << endl << endl;
-		cout << "Please enter an valid action: ";
+		cout << "\t\tInvalid choice." << endl << endl;
+		cout << "\t\tPlease enter an valid action: ";
 		cin >> action;
 	}
 
@@ -301,7 +323,7 @@ int menu()
 	case 4: update(); break;
 	case 5: deleteProduct(); break;
 	case 0: exit(0); break;
-	default: cout << "Invalid choice." << endl; exit(1); break;
+	default: cout << "\t\tInvalid choice." << endl; exit(1); break;
 	}
 
 	return action;
@@ -312,25 +334,38 @@ void display()
 	int action;
 	linkedList list;
 
+	cout << "\t";
+	for (int i = 0; i < 60; i++) { cout << (char)219; }
 	cout << endl;
-	cout << "+-------------------------------------------------------+" << endl;
-	cout << "|                   DISPLAY PRODUCT                     |" << endl;
-	cout << "|-------------------------------------------------------|" << endl;
-	cout << "|         Display all product details         1         |" << endl;
-	cout << "|         Sort by Name     (Insertion Sort)   2         |" << endl;
-	cout << "|         Sort by Category (Selection Sort)   3         |" << endl;
-	cout << "|         Sort by Price    (Merge Sort)       4         |" << endl;
-	cout << "|-------------------------------------------------------|" << endl;
-	cout << "|         BACK                                9         |" << endl;
-	cout << "|         EXIT                                0         |" << endl;
-	cout << "+.......................................................+" << endl;
-	cout << "Please select your choice: ";
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(29) << "      	    	      DISPLAY PRODUCT	                   " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                    " << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 60; i++) { cout << (char)219; }
+	cout << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                        " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "          Display all product details         1         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "          Sort by Name     (Insertion Sort)   2         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "          Sort by Category (Selection Sort)   3         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "          Sort by Price    (Merge Sort)       4         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "" << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 60; i++) { cout << (char)223; }
+	cout << endl;
+	cout << "\t" << (char)219 << setw(58) << "          BACK                                9         " << (char)219 << endl;
+
+	cout << "\t" << (char)219 << setw(58) << "          EXIT                                0         " << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
+	cout << endl;
+
+	cout << "\t\tPlease select your choice: ";
 	cin >> action;
 
 	while (action != 1 && action != 2 && action != 3 && action != 4 && action != 9 && action != 0)
 	{
-		cout << "Invalid choice." << endl << endl;
-		cout << "Please enter an valid action: ";
+		cout << "\t\tInvalid choice." << endl << endl;
+		cout << "\t\tPlease enter an valid action: ";
 		cin >> action;
 	}
 
@@ -342,7 +377,7 @@ void display()
 	case 4: MergeSorting(); break;
 	case 9: action = menu(); break;
 	case 0: exit(0); break;
-	default: cout << "Invalid choice." << endl; exit(1); break;
+	default: cout << "\t\tInvalid choice." << endl; exit(1); break;
 	}
 }
 
@@ -350,25 +385,37 @@ void search()
 {
 	int action;
 
+		cout << "\t";
+	for (int i = 0; i < 60; i++) { cout << (char)219; }
 	cout << endl;
-	cout << "+-----------------------------------------------------+" << endl;
-	cout << "|                   SEARCH PRODUCT                    |" << endl;
-	cout << "|-----------------------------------------------------|" << endl;
-	cout << "|           Search by product ID          1           |" << endl;
-	cout << "|           Search by product name        2           |" << endl;
-	cout << "|           Search by product Code        3           |" << endl;
-	cout << "|-----------------------------------------------------|" << endl;
-	cout << "|           BACK                          9           |" << endl;
-	cout << "|           EXIT                          0           |" << endl;
-	cout << "+.....................................................+" << endl;
-	cout << "Please select your choice: ";
+	cout << "\t" << (char)219 << setw(20) << "                      SEARCH PRODUCT                      " << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 60; i++) { cout << (char)219; }
+	cout << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "             Search by Product ID          1              " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "             Search by Product Name        2              " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "             Search by Product Code        3              " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "             Edit product                  4              " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "             Delete product                5              " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 60; i++) { cout << (char)223; }
+	cout << endl;
+	cout << "\t" << (char)219 << setw(58) << "             BACK                          9              " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "             EXIT                          0              " << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
+	cout << endl;
+
+	cout << "\t\tPlease select your choice: ";
 	cin >> action;
 	cout << endl;
 
 	while (action != 1 && action != 2 && action != 3 && action != 9 && action != 0)
 	{
-		cout << "Invalid choice." << endl << endl;
-		cout << "Please enter an valid action: ";
+		cout << "\t\tInvalid choice." << endl << endl;
+		cout << "\t\tPlease enter an valid action: ";
 		cin >> action;
 	}
 
@@ -379,7 +426,7 @@ void search()
 	case 3: searchCode(); break;
 	case 9: action = menu(); break;
 	case 0: exit(0); break;
-	default: cout << "Invalid choice." << endl; exit(1); break;
+	default: cout << "\t\tInvalid choice." << endl; exit(1); break;
 	}
 }
 
@@ -407,19 +454,25 @@ void insert()
 	string name, category, colors, price;
 	int code, preID, id;
 
+	cout << "\t";
+	for (int i = 0; i < 60; i++) { cout << (char)219; }
 	cout << endl;
-	cout << "+---------------------------------------------------+" << endl;
-	cout << "                     ADD PRODUCT                     " << endl;
-	cout << "+---------------------------------------------------+" << endl;
-	cout << "Please fill in the product details  below" << endl << endl;
-	cout << "Product name     : ";
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                   ADD PRODUCT				" << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 60; i++) { cout << (char)219; }
+	cout << endl;
+
+	cout << "\t\tPlease fill in the product details  below" << endl << endl;
+	cout << "\t\tProduct name     : ";
 	cin.ignore();
 	getline(cin, name);
-	cout << "Product category : ";
+	cout << "\t\tProduct category : ";
 	getline(cin, category);
-	cout << "Product Price : ";
+	cout << "\t\tProduct Price : ";
 	getline(cin, price);
-	cout << "Product color    : ";
+	cout << "\t\tProduct color    : ";
 	getline(cin, colors);
 
 
@@ -479,12 +532,12 @@ void insert()
 
 		if (!qState) {
 
-			cout << "Insert Successfully" << endl;
+			cout << "\t\tInsert Successfully" << endl;
 
 		}
 		else {
 
-			cout << "Insert Failed" << endl;
+			cout << "\t\tInsert Failed" << endl;
 
 		}
 
@@ -495,22 +548,28 @@ void update()
 {
 	string id, name, category, color, price;
 
+	cout << "\t";
+	for (int i = 0; i < 60; i++) { cout << (char)219; }
 	cout << endl;
-	cout << "+---------------------------------------------------+" << endl;
-	cout << "                     EDIT PRODUCT                    " << endl;
-	cout << "+---------------------------------------------------+" << endl;
-	cout << "Please fill in the product details  below" << endl << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                   EDIT PRODUCT				" << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 60; i++) { cout << (char)219; }
+	cout << endl;
+
+	cout << "\t\tPlease fill in the product details  below" << endl << endl;
 	
 	cin.ignore();
-	cout << "Product id     : ";
+	cout << "\t\tProduct id     : ";
 	getline(cin, id);
-	cout << "Product name     : ";
+	cout << "\t\tProduct name     : ";
 	getline(cin, name);
-	cout << "Product category : ";
+	cout << "\t\tProduct category : ";
 	getline(cin, category);
-	cout << "Product Price : ";
+	cout << "\t\tProduct Price : ";
 	getline(cin, price);
-	cout << "Product color    : ";
+	cout << "\t\tProduct color    : ";
 	getline(cin, color);
 
 	MYSQL* conn;
@@ -563,8 +622,19 @@ void deleteProduct()
 	int qState;
 	conn = initConnection();
 
+	cout << endl;
+	cout << "\t";
+	for (int i = 0; i < 60; i++) { cout << (char)219; }
+	cout << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                  DELETE PRODUCT				" << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 60; i++) { cout << (char)219; }
+	cout << endl;
+
 	string prodId;
-	cout << "Enter product ID to delete: ";
+	cout << "\t\tEnter product ID to delete: ";
 	cin >> prodId;
 
 	string query = "select * from products where product_id = '" + prodId + "'";
@@ -579,6 +649,6 @@ void deleteProduct()
 		qstate = mysql_query(conn, q);
 		//res = mysql_store_result(conn);
 		//int count = mysql_num_fields(res);
-		cout << prodId << "Record Found! Deleted";
+		cout << prodId << "\t\tRecord Found! Deleted";
 	}
 }

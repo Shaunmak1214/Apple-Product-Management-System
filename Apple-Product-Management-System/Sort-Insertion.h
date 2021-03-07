@@ -8,6 +8,7 @@
 #include<iomanip>
 #include <mysql.h>
 #include <string>
+
 #include "db.h"
 #include "product.h"
 
@@ -83,7 +84,7 @@ Product* getProductData()
 	return 0;
 }
 
-int InsertSort()
+void InsertSort()
 {
 
 	Product* p, temp;
@@ -105,15 +106,21 @@ int InsertSort()
 	}
 
 	cout << endl;
-	cout << "Product Sorted By Name : " << endl;
-	cout << "==================================================================================================================" << endl;
-	cout << setw(5) << left << "No" << setw(5) << "Id" << setw(11) << "Code" << setw(30) << "Name" << setw(15) << "Category" << setw(10) << "Price" << setw(25) << "Colors" << endl;
-	cout << "==================================================================================================================" << endl;
+	cout << "\t";
+	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
+	cout << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(34) << "               PRODUCT SORTED BY NAME                     " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t";
+	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
+	cout << endl;
+	
+	cout << setw(5) << left << "No" << setw(5) << "Id" << setw(8) << "Code" << setw(30) << "Name" << setw(15) << "Category" << setw(10) << "Price" << setw(25) << "Colors" << endl;
 
 	for (int i = 0; i < total; i++)
 	{
 		cout << setw(5) << i + 1 << setw(5) << p[i].id << setw(11) << p[i].code << setw(30) << p[i].name << setw(15) << p[i].category << setw(10) << p[i].price << setw(25) << p[i].color << endl;
 	}
 
-	return 0;
 }
