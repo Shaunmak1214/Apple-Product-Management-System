@@ -23,6 +23,7 @@ void add();
 void edit();
 void deleteProduct();
 void search();
+int int_to_str(int a, int b);
 
 using namespace std;
 int qstate;
@@ -426,6 +427,8 @@ void search()
 
 void add()
 {
+	//insert("Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");
+	//insert("10","PH102", "iPhone 12", "iPhone", "3399.00", "Black, White, Red, Green, Blue");
 	string name, category, color;
 	double price;
 
@@ -448,7 +451,8 @@ void add()
 
 	cout << name << category << price << color; //Test output
 
-	//insert("Iphone 11 Pro", "phone", "4500", "black, grey, space gray, midnight green");
+	
+	
 }
 
 void edit()
@@ -458,6 +462,47 @@ void edit()
 
 void deleteProduct()
 {
+	MYSQL* conn;
+	MYSQL_ROW row;
+	MYSQL_RES* res;
+	int qState;
+	conn = initConnection();
 
+	string prodId;
+	cout << "Enter product ID to delete: ";
+	cin >> prodId;
 
+	string query = "select * from products where product_id = '" + prodId + "'";
+	const char* q = query.c_str();
+	qstate = mysql_query(conn, q);
+	res = mysql_store_result(conn);
+	int count = mysql_num_fields(res);
+	if (!qstate)
+	{
+		string query1 = "delete from products where product_id = '" + prodId + "'";
+		const char* q = query1.c_str();
+		qstate = mysql_query(conn, q);
+		//res = mysql_store_result(conn);
+		//int count = mysql_num_fields(res);
+		cout << prodId << "Record Found! Deleted";
+	}
+}
+
+int int_to_str(int a, int b)
+{
+	// Convert both the integers to string 
+	string s1 = to_string(a);
+	string s2 = to_string(b);
+
+	// Concatenate both strings 
+	string s = s1 + s2;
+
+	// Convert the concatenated string 
+	// to integer 
+	int combine = stoi(s);
+
+	cout << combine << endl;
+
+	// return the formed integer 
+	return combine;
 }
