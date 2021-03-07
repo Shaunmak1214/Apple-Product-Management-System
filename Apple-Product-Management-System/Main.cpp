@@ -557,6 +557,47 @@ void update()
 
 void deleteProduct()
 {
+	MYSQL* conn;
+	MYSQL_ROW row;
+	MYSQL_RES* res;
+	int qState;
+	conn = initConnection();
 
+	string prodId;
+	cout << "Enter product ID to delete: ";
+	cin >> prodId;
 
+	string query = "select * from products where product_id = '" + prodId + "'";
+	const char* q = query.c_str();
+	qstate = mysql_query(conn, q);
+	res = mysql_store_result(conn);
+	int count = mysql_num_fields(res);
+	if (!qstate)
+	{
+		string query1 = "delete from products where product_id = '" + prodId + "'";
+		const char* q = query1.c_str();
+		qstate = mysql_query(conn, q);
+		//res = mysql_store_result(conn);
+		//int count = mysql_num_fields(res);
+		cout << prodId << "Record Found! Deleted";
+	}
+}
+
+int int_to_str(int a, int b)
+{
+	// Convert both the integers to string 
+	string s1 = to_string(a);
+	string s2 = to_string(b);
+
+	// Concatenate both strings 
+	string s = s1 + s2;
+
+	// Convert the concatenated string 
+	// to integer 
+	int combine = stoi(s);
+
+	cout << combine << endl;
+
+	// return the formed integer 
+	return combine;
 }
