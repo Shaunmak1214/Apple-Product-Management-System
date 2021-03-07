@@ -1,4 +1,4 @@
-# <p align="center">Hello, there CODERS !!! We are  <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px"></p>
+# <p align="center">Hello, there CODERS !!! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px"></p>
 
 ## <p align="center">Apple-Product-Management-System</p>
 
