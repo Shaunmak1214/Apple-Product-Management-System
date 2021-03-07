@@ -3,18 +3,20 @@
 ## <p align="center">Apple-Product-Management-System</p>
 
 ---
-
+<br>
 ### <p align="center">:raised_hand:Technologies Highlights:</p>
 #### 1). SQL Connector C++
 #### 2). C++ Language
 #### 3). remotemysql (as server)
 
 ---
+<br>
 
 ### <p align="center">:raised_hand:Basic Demo of the Program:</p>
 <p align="center" style="font-size: 11px">Video of the demo program will be uploaded very soon</p>
 
 ---
+<br>
 
 ### <p align="center">Credits to : :heart_eyes:</p>
 #### 1). <a href="https://github.com/Shaunmak1214">Shaun</a>
