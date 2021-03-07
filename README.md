@@ -16,7 +16,7 @@
 
 ---
 
-### Credits to : 
+### <p align="center">Credits to : :heart_eyes:</p>
 #### 1). <a href="https://github.com/Shaunmak1214">Shaun</a>
 #### 2). <a href="https://github.com/sinyin-ong">Sin Yin</a>
 #### 3). <a href="https://github.com/Lallamaa">Yee Shuen</a>
