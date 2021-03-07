@@ -1,7 +1,9 @@
 #pragma once
 
+#include"db.h"
 #include<iostream>
 #include<string>
+
 using namespace std;
 
 int hashing(int code);
@@ -10,6 +12,10 @@ void searchCode()
 {
 	int hashedCode;
 	int productCode;
+	MYSQL* conn;
+	MYSQL_ROW row;
+	MYSQL_RES* res;
+	int qstate1;
 
 	cout << endl;
 	cout << "+---------------------------------------------------+" << endl;
@@ -24,14 +30,47 @@ void searchCode()
 	cout << "\t 6. Others			-------------------  909	  " << endl;
 	cout << "+---------------------------------------------------+" << endl << endl;
 	cout << "Enter the product code: ";
-	cin >> productCode;
+	cin >> hashedCode;
 
-	// User hashedCode
-	hashedCode = hashing(productCode);
+	conn = initConnection();
 
-	// search from database
-	// if hashed == hashedCode
-	// display by linked list
+	if (conn)
+	{
+		string query = "SELECT * FROM products";
+		const char* q = query.c_str();
+		qstate1 = mysql_query(conn, q);
+		if (!qstate1)
+		{
+			res = mysql_store_result(conn);
+			int numfields = mysql_num_fields(res);
+			int i = 0;
+
+			while (row = mysql_fetch_row(res))
+			{
+				int comparedHash = hashing(stoi(row[1]));
+				if (comparedHash == hashedCode) {
+
+					//cout << row[2] << endl;
+					cout << "Product Hashed by Key Entered : " << endl;
+					cout << setw(5) << left << "No" << setw(5) << "Id" << setw(8) << "Code" << setw(30) << "Name" << setw(15) << "Category" << setw(10) << "Price" << setw(25) << "Colors" << endl;
+					cout << setw(5) << i + 1 << setw(5) << row[1] << setw(8) << row[2] << setw(30) << row[3] << setw(15) << row[4] << setw(10) << row[5] << setw(25) << row[6] << endl;
+
+				}
+
+				i++;
+
+			}
+
+		}
+		else
+		{
+			cout << "Query failed: " << mysql_error(conn) << endl;
+		}
+	}
+	else
+	{
+		puts("Connection to database has failed!");
+	}
 
 }
 
