@@ -411,7 +411,7 @@ void search()
 	cin >> action;
 	cout << endl;
 
-	while (action != 1 && action != 2 && action != 9 && action != 0)
+	while (action != 1 && action != 2 && action != 3 && action != 9 && action != 0)
 	{
 		cout << "\t\tInvalid choice." << endl << endl;
 		cout << "\t\tPlease enter an valid action: ";
