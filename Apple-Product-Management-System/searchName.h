@@ -37,11 +37,11 @@ void searchName()
 	cout << endl;
 	
 	cout << "\t\tEnter the name of product: ";
-	getline(cin, prodName);
 	cin.ignore();
+	getline(cin, prodName);
 
 	found = converSearchName(prodName, &namehead, &smallnamehead);
-	cout << "\t\tFound: " << found;
+	cout << endl << "\t\tProduct found! Product ID is " << found << "." << endl;
 }
 
 int converSearchName(string prodName, Node** name, Node** smallname)
@@ -58,8 +58,8 @@ int converSearchName(string prodName, Node** name, Node** smallname)
 		head = head->next;
 		smallNameList.append(&smallnamehead, node->data);
 	}
-	cout << productName;
-	smallNameList.printList(smallnamehead);
+	//cout << productName; //Test converted product name output
+	//smallNameList.printList(smallnamehead); //Test the name that convert to small cases
 
 	found = linearSearch(productName, smallnamehead);
 
