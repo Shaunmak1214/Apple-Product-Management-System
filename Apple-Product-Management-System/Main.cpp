@@ -24,7 +24,9 @@ void display();
 void deleteProduct();
 void search();
 int int_to_str(int a, int b);
-
+void MergeSort();
+void SelectSort();
+void InsertSort();
 
 using namespace std;
 int qstate;
@@ -581,23 +583,4 @@ void deleteProduct()
 		//int count = mysql_num_fields(res);
 		cout << prodId << "Record Found! Deleted";
 	}
-}
-
-int int_to_str(int a, int b)
-{
-	// Convert both the integers to string 
-	string s1 = to_string(a);
-	string s2 = to_string(b);
-
-	// Concatenate both strings 
-	string s = s1 + s2;
-
-	// Convert the concatenated string 
-	// to integer 
-	int combine = stoi(s);
-
-	cout << combine << endl;
-
-	// return the formed integer 
-	return combine;
 }

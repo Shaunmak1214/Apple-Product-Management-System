@@ -101,7 +101,7 @@ int selectMin(Details pd[], int position)
 	return index;
 }
 
-int SelectSort()
+void SelectSort()
 {
 	Details* pd, current;
 	pd = new (nothrow) Details[Rows];
@@ -131,5 +131,4 @@ int SelectSort()
 		cout << setw(5) << i + 1 << setw(5) << pd[i].id << setw(8) << pd[i].code << setw(30) << pd[i].name << setw(15) << pd[i].category << setw(10) << pd[i].price << setw(25) << pd[i].color << endl;
 	}
 
-	return 0;
 }

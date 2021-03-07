@@ -83,7 +83,7 @@ Product* getProductData()
 	return 0;
 }
 
-int InsertSort()
+void InsertSort()
 {
 
 	Product* p, temp;
@@ -112,5 +112,4 @@ int InsertSort()
 		cout << setw(5) << i + 1 << setw(5) << p[i].id << setw(8) << p[i].code << setw(30) << p[i].name << setw(15) << p[i].category << setw(10) << p[i].price << setw(25) << p[i].color << endl;
 	}
 
-	return 0;
 }
