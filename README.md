@@ -9,7 +9,6 @@
 #### 2). C++ Language
 #### 3). remotemysql (as server)
 
-<br>
 ---
 
 ### <p align="center">:raised_hand:Basic Demo of the Program:</p>
