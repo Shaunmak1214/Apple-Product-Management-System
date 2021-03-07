@@ -11,7 +11,7 @@ void searchId();
 void storeIntId(Node* idhead);
 void bubbleSort(struct idNode** intidhead);
 struct idNode* swap(struct idNode* ptr1, struct idNode* ptr2);
-void printList(struct idNode* intidhead);
+//void printList(struct idNode* intidhead); //Test linked list output
 int getCount(idNode* intidhead);
 struct idNode* binarySearch(idNode* intidhead, int prodId);
 struct idNode* middle(idNode* first, idNode* last);
@@ -99,17 +99,15 @@ void searchId()
 
 	storeIntId(idhead);
 	bubbleSort(&intidhead);
-	printList(intidhead); //Test output
+	//printList(intidhead); //Test linked list output
 
 	count = getCount(intidhead);
-	cout << "\t\tCount: " << count;
+	//cout << "\t\tCount: " << count; //Test linked list total count
 
 	idNode* head = binarySearch(intidhead, prodId);
-	cout << endl <<  "\t\tData: " << head->data;
+	cout << endl <<  "\t\tProduct found! Product id is " << head->data <<"." << endl;
 	found = head->data;
 
-	//list.printNthList(,found, count);
-	//idList.printList(idhead);
 }
 
 void storeIntId(Node* idhead)
@@ -124,7 +122,7 @@ void storeIntId(Node* idhead)
 		idhead = idhead->next;
 		intIdList.append(&intidhead, convertedId);
 	}
-	intIdList.printList(intidhead); //Test output
+	//intIdList.printList(intidhead); //Test output
 }
 
 void bubbleSort(struct idNode** intidhead)
@@ -169,8 +167,8 @@ struct idNode* swap(struct idNode* ptr1, struct idNode* ptr2)
 	ptr1->next = temp;
 	return ptr2;
 }
-
-void printList(struct idNode* intidhead) //Test output
+////////Test bubble source output
+/*void printList(struct idNode* intidhead) //Test output
 {
 	while (intidhead != NULL)
 	{
@@ -178,7 +176,7 @@ void printList(struct idNode* intidhead) //Test output
 		intidhead = intidhead->next;
 	}
 	cout << endl;
-}
+}*/
 
 int getCount(idNode* intidhead)
 {

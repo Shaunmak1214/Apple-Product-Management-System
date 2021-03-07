@@ -176,7 +176,7 @@ void storeNameList()
 			while (row = mysql_fetch_row(res))
 			{
 				name = "";
-				name += row[1];
+				name += row[2];
 				nameList.append(&namehead, name);
 			}
 		}
