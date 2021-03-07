@@ -416,13 +416,10 @@ void insert()
 	cin.ignore();
 	getline(cin, name);
 	cout << "Product category : ";
-	//cin.ignore();
 	getline(cin, category);
 	cout << "Product Price : ";
-	//cin.ignore();
 	getline(cin, price);
 	cout << "Product color    : ";
-	//cin.ignore();
 	getline(cin, colors);
 
 
@@ -475,18 +472,6 @@ void insert()
 
 		string insertQ = "INSERT INTO products (`id`, `product_name`, `product_category`, `product_price`, `product_colors`) VALUES ( '" + strid + "', '" + name + "', '" + category + "', '" + price  + "', '" + colors + "');";
 
-		/*string insertQ = "INSERT INTO products (`id`, `product_name`, `product_category`, `product_price`, `product_colors`) VALUES ( ' ";
-		insertQ += strid;
-		insertQ += "', '";
-		insertQ += name;
-		insertQ += "', '";
-		insertQ += category;
-		insertQ += "', '";
-		insertQ += price;
-		insertQ += "', '";
-		insertQ += colors;
-		insertQ += "' );";*/
-
 		cout << insertQ << endl;
 
 		const char* q = insertQ.c_str();
@@ -508,26 +493,25 @@ void insert()
 
 void update() 
 {
-	string name, category, color, price;
+	string id, name, category, color, price;
 
 	cout << endl;
 	cout << "+---------------------------------------------------+" << endl;
 	cout << "                     EDIT PRODUCT                    " << endl;
 	cout << "+---------------------------------------------------+" << endl;
 	cout << "Please fill in the product details  below" << endl << endl;
-
+	
+	cin.ignore();
+	cout << "Product id     : ";
+	getline(cin, id);
 	cout << "Product name     : ";
 	getline(cin, name);
-	cin.ignore();
 	cout << "Product category : ";
 	getline(cin, category);
-	cin.ignore();
 	cout << "Product Price : ";
 	getline(cin, price);
-	cin.ignore();
 	cout << "Product color    : ";
 	getline(cin, color);
-	cin.ignore();
 
 	MYSQL* conn;
 	MYSQL_ROW row;
@@ -548,7 +532,7 @@ void update()
 		updateQ += ",";
 		updateQ += " `product_colors` = ";
 		updateQ += "'" + color + "' ";
-		//updateQ += "WHERE `product_id` = '" + id;
+		updateQ += "WHERE `id` = '" + id;
 		updateQ += "';";
 
 		cout << updateQ << endl;

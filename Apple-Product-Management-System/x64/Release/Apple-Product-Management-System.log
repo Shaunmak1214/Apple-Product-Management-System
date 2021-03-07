@@ -19,14 +19,14 @@ D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Ma
 D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(233,13): warning C4101: 'nameList': unreferenced local variable
 D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(232,13): warning C4101: 'idList': unreferenced local variable
 D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(231,13): warning C4101: 'list': unreferenced local variable
-D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(430,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(470,13): warning C4101: 'res': unreferenced local variable
-D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(469,12): warning C4101: 'row': unreferenced local variable
-D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(534,13): warning C4101: 'res': unreferenced local variable
-D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(533,12): warning C4101: 'row': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(427,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(467,13): warning C4101: 'res': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(466,12): warning C4101: 'row': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(518,13): warning C4101: 'res': unreferenced local variable
+D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(517,12): warning C4101: 'row': unreferenced local variable
   Generating code
   2 of 212 functions ( 0.9%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    6 functions had inline decision re-evaluated but remain unchanged
+    23 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Apple-Product-Management-System.vcxproj -> D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\x64\Release\Apple-Product-Management-System.exe
