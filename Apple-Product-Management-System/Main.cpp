@@ -338,11 +338,11 @@ void display()
 	for (int i = 0; i < 60; i++) { cout << (char)219; }
 	cout << endl;
 	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
-	cout << "\t" << (char)219 << setw(58) << "			  DISPLAY PRODUCT	     " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(29) << "      	    	      DISPLAY PRODUCT	                   " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "                                                    " << (char)219 << endl;
 	cout << "\t";
-	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
 	for (int i = 0; i < 60; i++) { cout << (char)219; }
-	cout << endl;	
+	cout << endl;
 	cout << "\t" << (char)219 << setw(58) << "                                                        " << (char)219 << endl;
 	cout << "\t" << (char)219 << setw(58) << "			Display all product details         1         " << (char)219 << endl;
 	cout << "\t" << (char)219 << setw(58) << "			Sort by Name     (Insertion Sort)   2         " << (char)219 << endl;
@@ -387,7 +387,7 @@ void search()
 		cout << "\t";
 	for (int i = 0; i < 60; i++) { cout << (char)219; }
 	cout << endl;
-	cout << "\t" << (char)219 << setw(58) << "                   SEARCH PRODUCT							" << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(20) << "                      SEARCH PRODUCT                      " << (char)219 << endl;
 	cout << "\t";
 	for (int i = 0; i < 60; i++) { cout << (char)219; }
 	cout << endl;

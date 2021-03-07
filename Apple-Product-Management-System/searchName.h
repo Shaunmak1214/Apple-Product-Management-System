@@ -30,7 +30,7 @@ void searchName()
 	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
 	cout << endl;
 	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
-	cout << "\t" << (char)219 << setw(58) << "                   SEARCH PRODUCT				" << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(21) << "                      SEARCH PRODUCT			   " << (char)219 << endl;
 	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
 	cout << "\t";
 	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
@@ -41,7 +41,15 @@ void searchName()
 	getline(cin, prodName);
 
 	found = converSearchName(prodName, &namehead, &smallnamehead);
-	cout << endl << "\t\tProduct found! Product ID is " << found << "." << endl;
+
+	if (found == -1)
+	{
+		cout << endl << "\t\tProduct not found!" << endl;
+	}
+	else
+	{
+		cout << endl << "\t\tProduct found! Product ID is " << found << "." << endl;
+	}
 }
 
 int converSearchName(string prodName, Node** name, Node** smallname)

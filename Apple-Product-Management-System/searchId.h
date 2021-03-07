@@ -88,7 +88,7 @@ void searchId()
 	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
 	cout << endl;
 	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
-	cout << "\t" << (char)219 << setw(58) << "                  SEARCH PRODUCT				" << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(21) << "                      SEARCH PRODUCT			   " << (char)219 << endl;
 	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
 	cout << "\t";
 	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
@@ -105,8 +105,16 @@ void searchId()
 	//cout << "\t\tCount: " << count; //Test linked list total count
 
 	idNode* head = binarySearch(intidhead, prodId);
-	cout << endl <<  "\t\tProduct found! Product id is " << head->data <<"." << endl;
 	found = head->data;
+
+	if (found == -1)
+	{
+		cout << endl << "\t\tProduct not found!" << endl;
+	}
+	else
+	{
+		cout << endl << "\t\tProduct found!." << endl;
+	}
 
 }
 
