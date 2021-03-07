@@ -4,7 +4,7 @@
 
 ---
 
-## <p align="center">:raised_hand:Technologies Highlights:</p>
+### <p align="center">:raised_hand:Technologies Highlights:</p>
 #### SQL Connector C++, C++, remotemysql (as server)
 
 ---
