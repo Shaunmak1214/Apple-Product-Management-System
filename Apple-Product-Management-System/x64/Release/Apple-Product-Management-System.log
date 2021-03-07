@@ -29,8 +29,8 @@ C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Pr
 C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(621,6): warning C4101: 'qState': unreferenced local variable
 C:\Users\USER\source\repos\Shaunmak1214\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(619,12): warning C4101: 'row': unreferenced local variable
   Generating code
-  4 of 231 functions ( 1.7%) were compiled, the rest were copied from previous compilation.
+  2 of 231 functions ( 0.9%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Apple-Product-Management-System.vcxproj -> C:\Users\USER\Source\Repos\Shaunmak1214\Apple-Product-Management-System\x64\Release\Apple-Product-Management-System.exe
