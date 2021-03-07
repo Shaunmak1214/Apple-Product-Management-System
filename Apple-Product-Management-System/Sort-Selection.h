@@ -101,7 +101,7 @@ int selectMin(Details pd[], int position)
 		{
 			temp = pd[i];  //swap the position 
 			index = i;
-			cout << index << endl;
+			//cout << index << endl;
 		}
 	}
 
@@ -141,7 +141,7 @@ void SelectSort()
 	{
 		//Selection Sort
 		int min = selectMin(pd, i);
-		cout << min << endl;
+		//cout << min << endl;
 
 		// Select the minimum element in each loop
 		if (pd[min].category < pd[i].category)

@@ -30,6 +30,9 @@ D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Ma
 D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(545,13): warning C4101: 'columnNameRes': unreferenced local variable
 D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\Apple-Product-Management-System\Main.cpp(587,13): warning C4101: 'columnNameRes': unreferenced local variable
   Generating code
+<<<<<<< HEAD
+  1 of 231 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
+=======
 <<<<<<< Updated upstream
   Previous IPDB not found, fall back to full compilation.
   All 233 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.

@@ -1,2 +1,7 @@
+<<<<<<< HEAD
+PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.26.28801:TargetPlatformVersion=10.0.18362.0:
+Release|x64|D:\Document\MMU-5th-Sem\Data-Structure\Assignments\Apple-Product-Management-System-cloned\Apple-Product-Management-System\|
+=======
 PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.28.29910:TargetPlatformVersion=10.0.18362.0:
 Release|x64|D:\MMU\SEM 5\DCP\DCP Assignment\Apple-Product-Management-System\|
+>>>>>>> bdd0253740620bfa9aecd1a0e2a8f75d8384bee7

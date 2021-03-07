@@ -142,17 +142,17 @@ void display()
 	for (int i = 0; i < 60; i++) { cout << (char)219; }
 	cout << endl;
 	cout << "\t" << (char)219 << setw(58) << "                                                        " << (char)219 << endl;
-	cout << "\t" << (char)219 << setw(30) << "	     Display all product details         1         " << (char)219 << endl;
-	cout << "\t" << (char)219 << setw(30) << "	     Sort by Name     (Insertion Sort)   2         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "          Display all product details         1         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "          Sort by Name     (Insertion Sort)   2         " << (char)219 << endl;
 	cout << "\t" << (char)219 << setw(58) << "          Sort by Category (Selection Sort)   3         " << (char)219 << endl;
 	cout << "\t" << (char)219 << setw(58) << "          Sort by Price    (Merge Sort)       4         " << (char)219 << endl;
-	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "" << (char)219 << endl;
 	cout << "\t";
 	for (int i = 0; i < 60; i++) { cout << (char)223; }
 	cout << endl;
-	cout << "\t" << (char)219 << setw(20) << "	     BACK			         9         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "          BACK                                9         " << (char)219 << endl;
 
-	cout << "\t" << (char)219 << setw(20) << "	     EXIT				 0         " << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(58) << "          EXIT                                0         " << (char)219 << endl;
 	cout << "\t";
 	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
 	cout << endl;

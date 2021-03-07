@@ -194,7 +194,7 @@ void PrintProducts(Products pr[])
 	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
 	cout << endl;
 	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
-	cout << "\t" << (char)219 << setw(58) << "         PRODUCT SORTED BY NAME		" << (char)219 << endl;
+	cout << "\t" << (char)219 << setw(34) << "               PRODUCT SORTED BY NAME                     " << (char)219 << endl;
 	cout << "\t" << (char)219 << setw(58) << "                                                         " << (char)219 << endl;
 	cout << "\t";
 	for (int i = 0; i < 30; i++) { cout << (char)254 << " "; }
