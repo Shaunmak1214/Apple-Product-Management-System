@@ -19,7 +19,8 @@
 ##### 1). Linked List
 ##### 2). Struct
 
-#### Algorithms used: Selection Sort, Insertion Sort, Bubble sort, Merge Sort, Binary Search, Linear Search
+
+#### Algorithms used:
 ##### 1). Selection Sort
 ##### 2. Insertion Sort
 ##### 3. Bubble Sort
