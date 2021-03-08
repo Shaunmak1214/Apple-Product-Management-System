@@ -14,8 +14,18 @@
 ---
 
 ### <p align="center">:grey_question: Data Structure and Algorithms Used</p>
-#### Data Structures used: Linked List, Struct 
+
+#### Data Structures used:
+##### 1). Linked List
+##### 2). Struct
+
 #### Algorithms used: Selection Sort, Insertion Sort, Bubble sort, Merge Sort, Binary Search, Linear Search
+##### 1). Selection Sort
+##### 2. Insertion Sort
+##### 3. Bubble Sort
+##### 4. Merge Sort
+##### 5. Binary Search
+##### 6. Linear Search
 
 ---
 
